@@ -53,7 +53,7 @@ function ProductPage() {
 
       <div className="grid gap-6 md:grid-cols-2 md:gap-12">
         {/* Image */}
-        <div className="rounded-2xl bg-secondary">
+        <div className="rounded-2xl bg-card ring-1 ring-border">
           <img
             src={product.image}
             alt={product.name}
