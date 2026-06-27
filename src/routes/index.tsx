@@ -58,9 +58,14 @@ function Home() {
             <div className="mt-5 flex items-center justify-center gap-3 sm:mt-7">
               <Link
                 to="/boutique"
-                className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-full bg-foreground px-6 py-2.5 text-xs font-medium text-background shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] ring-1 ring-foreground/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_rgba(0,191,166,0.45)] sm:px-7 sm:py-3 sm:text-sm"
+                className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-full border border-white/40 bg-white/30 px-6 py-2.5 text-xs font-medium text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),inset_0_-6px_12px_-6px_rgba(0,191,166,0.25),0_10px_30px_-10px_rgba(0,191,166,0.45)] backdrop-blur-xl backdrop-saturate-150 transition-all duration-500 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/40 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),inset_0_-8px_16px_-6px_rgba(0,191,166,0.4),0_18px_40px_-12px_rgba(0,191,166,0.55)] sm:px-7 sm:py-3 sm:text-sm"
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                {/* Specular highlight */}
+                <span className="pointer-events-none absolute inset-x-3 top-0 h-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent opacity-80" />
+                {/* Liquid shimmer sweep */}
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
+                {/* Turquoise glow underlay */}
+                <span className="pointer-events-none absolute -inset-1 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,191,166,0.35),transparent_70%)] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative">Acheter</span>
                 <svg className="relative h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </Link>
