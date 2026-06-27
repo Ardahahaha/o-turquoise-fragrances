@@ -26,11 +26,11 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <div className="relative mx-auto mb-6 w-full max-w-md sm:max-w-2xl md:max-w-4xl">
+            <div className="relative mx-auto mb-6 w-full max-w-md">
               <SplineScene
                 key={splineKey}
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-                className="mx-auto h-72 w-full overflow-hidden sm:h-96 md:h-[480px]"
+                className="mx-auto h-72 w-full overflow-hidden"
               />
               <button
                 type="button"
