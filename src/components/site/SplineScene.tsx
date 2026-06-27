@@ -57,16 +57,37 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
   }, []);
 
   return (
-    <div ref={ref} className={className} style={{ background: "transparent" }}>
+    <div ref={ref} className={className} style={{ background: "transparent", position: "relative" }}>
       {shouldLoad && !failed && (
         <Suspense fallback={null}>
           <Spline
             scene={scene}
             style={{ width: "100%", height: "100%", background: "transparent" }}
             onError={() => setFailed(true)}
+            onLoad={(app: unknown) => {
+              try {
+                const a = app as { setZoom?: (z: number) => void };
+                a.setZoom?.(zoom);
+              } catch {
+                /* noop */
+              }
+            }}
           />
         </Suspense>
       )}
+      {/* Masque le watermark "Built with Spline" en bas à droite */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          width: 160,
+          height: 44,
+          background: "var(--background, #fff)",
+          pointerEvents: "none",
+        }}
+      />
     </div>
   );
 }
