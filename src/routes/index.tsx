@@ -1,11 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Truck, ShieldCheck, RotateCcw } from "lucide-react";
-import { lazy, Suspense } from "react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
-
-const Spline = lazy(() => import("@splinetool/react-spline"));
+import { SplineScene } from "@/components/site/SplineScene";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,7 +17,6 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
-  const splineKey = 0;
 
   return (
     <div>
@@ -27,15 +24,10 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <div className="mx-auto mb-6 h-56 w-full max-w-md overflow-hidden sm:h-72">
-              <Suspense fallback={null}>
-                <Spline
-                  key={splineKey}
-                  scene="https://prod.spline.design/2450e63d-1121-4431-ae81-82d53511496f/scene.splinecode"
-                  style={{ width: "100%", height: "100%", background: "transparent" }}
-                />
-              </Suspense>
-            </div>
+            <SplineScene
+              scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
+              className="mx-auto mb-6 h-48 w-full max-w-sm overflow-hidden sm:h-64 sm:max-w-md md:h-72 md:max-w-lg"
+            />
           </Reveal>
           <Reveal>
             <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
