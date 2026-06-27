@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck, RotateCcw, RefreshCw } from "lucide-react";
-import { useState } from "react";
+import { Truck, ShieldCheck, RotateCcw } from "lucide-react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -18,7 +17,6 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
-  const [splineKey, setSplineKey] = useState(0);
 
   return (
     <div>
@@ -28,26 +26,16 @@ function Home() {
           <Reveal>
             <div className="relative mx-auto mb-6 w-full max-w-md">
               <SplineScene
-                key={splineKey}
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
                 className="mx-auto h-72 w-full overflow-hidden"
                 zoom={0.3}
               />
               {/* Texte O Turquoise par-dessus l'animation */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center">
-                <span className="text-lg font-semibold tracking-[0.18em] text-foreground/90 sm:text-xl">
+              <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center sm:bottom-16">
+                <span className="text-2xl font-semibold tracking-[0.08em] text-foreground sm:text-3xl">
                   O TURQUOISE
                 </span>
               </div>
-              <button
-                type="button"
-                onClick={() => setSplineKey((k) => k + 1)}
-                aria-label="Rafraîchir l'animation"
-                data-no-shadow
-                className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/70 text-foreground ring-1 ring-black/5 backdrop-blur transition hover:bg-white"
-              >
-                <RefreshCw className="h-3.5 w-3.5" />
-              </button>
             </div>
           </Reveal>
           <Reveal>
