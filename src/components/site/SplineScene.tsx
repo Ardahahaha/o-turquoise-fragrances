@@ -75,19 +75,16 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
           />
         </Suspense>
       )}
-      {/* Masque le watermark "Built with Spline" en bas à droite */}
+      {/* Masque le watermark "Built with Spline" — fondu doux vers le fond de la page */}
       <div
         aria-hidden
+        className="pointer-events-none absolute bottom-0 right-0 h-12 w-44"
         style={{
-          position: "absolute",
-          right: 0,
-          bottom: 0,
-          width: 220,
-          height: 70,
-          background: "#f1f9f8",
-          pointerEvents: "none",
+          background:
+            "linear-gradient(to top, var(--background) 55%, transparent), linear-gradient(to left, var(--background) 55%, transparent)",
         }}
       />
     </div>
   );
 }
+
