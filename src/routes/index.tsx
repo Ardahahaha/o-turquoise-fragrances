@@ -31,7 +31,7 @@ function Home() {
                 key={splineKey}
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
                 className="mx-auto h-72 w-full overflow-hidden"
-                zoom={0.55}
+                zoom={0.3}
               />
               {/* Texte O Turquoise par-dessus l'animation */}
               <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center">
