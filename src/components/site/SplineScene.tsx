@@ -56,10 +56,6 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
     };
   }, []);
 
-  // On agrandit la zone interne pour pousser le watermark "Built with Spline"
-  // hors du cadre visible, puis on coupe net avec overflow:hidden sur le conteneur.
-  const WATERMARK_PAD = 64; // px — hauteur du badge Spline à masquer
-
   return (
     <div
       ref={ref}
