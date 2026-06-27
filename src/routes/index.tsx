@@ -27,7 +27,7 @@ function Home() {
             <div className="relative mx-auto mb-6 w-full max-w-md">
               <SplineScene
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-                className="mx-auto h-72 w-full overflow-hidden"
+                className="mx-auto h-72 w-full overflow-hidden rounded-[2rem] ring-1 ring-black/5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_40px_-20px_rgba(15,23,42,0.35),0_40px_80px_-40px_rgba(15,23,42,0.25)]"
                 zoom={0.3}
               />
               {/* Texte O Turquoise par-dessus l'animation */}
