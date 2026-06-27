@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck, RotateCcw } from "lucide-react";
+import { Truck, ShieldCheck, RotateCcw, RefreshCw } from "lucide-react";
+import { useState } from "react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -17,6 +18,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
+  const [splineKey, setSplineKey] = useState(0);
 
   return (
     <div>
@@ -24,10 +26,22 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <SplineScene
-              scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-              className="mx-auto mb-6 h-72 w-full max-w-md overflow-hidden sm:h-96 sm:max-w-2xl md:h-[480px] md:max-w-4xl"
-            />
+            <div className="relative mx-auto mb-6 w-full max-w-md sm:max-w-2xl md:max-w-4xl">
+              <SplineScene
+                key={splineKey}
+                scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
+                className="mx-auto h-72 w-full overflow-hidden sm:h-96 md:h-[480px]"
+              />
+              <button
+                type="button"
+                onClick={() => setSplineKey((k) => k + 1)}
+                aria-label="Rafraîchir l'animation"
+                data-no-shadow
+                className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/70 text-foreground ring-1 ring-black/5 backdrop-blur transition hover:bg-white"
+              >
+                <RefreshCw className="h-3.5 w-3.5" />
+              </button>
+            </div>
           </Reveal>
           <Reveal>
             <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
