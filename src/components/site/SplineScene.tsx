@@ -82,12 +82,19 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
       {/* Bande de fondu en bas — masque le badge "Built with Spline" et se confond avec la page */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-20"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-28"
         style={{
           background:
-            "linear-gradient(to top, var(--background) 60%, color-mix(in oklab, var(--background) 70%, transparent) 80%, transparent 100%)",
+            "linear-gradient(to top, var(--background) 0%, var(--background) 55%, color-mix(in oklab, var(--background) 80%, transparent) 75%, color-mix(in oklab, var(--background) 40%, transparent) 90%, transparent 100%)",
         }}
       />
+      {/* Petit cache opaque centré sur le badge pour neutraliser tout liseré résiduel */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 right-0 h-12 w-44"
+        style={{ background: "var(--background)" }}
+      />
+
     </div>
   );
 }
