@@ -56,35 +56,43 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
     };
   }, []);
 
+  // On agrandit la zone interne pour pousser le watermark "Built with Spline"
+  // hors du cadre visible, puis on coupe net avec overflow:hidden sur le conteneur.
+  const WATERMARK_PAD = 64; // px — hauteur du badge Spline à masquer
+
   return (
-    <div ref={ref} className={className} style={{ background: "transparent", position: "relative" }}>
+    <div
+      ref={ref}
+      className={className}
+      style={{ background: "transparent", position: "relative", overflow: "hidden" }}
+    >
       {shouldLoad && !failed && (
         <Suspense fallback={null}>
-          <Spline
-            scene={scene}
-            style={{ width: "100%", height: "100%", background: "transparent" }}
-            onError={() => setFailed(true)}
-            onLoad={(app: unknown) => {
-              try {
-                const a = app as { setZoom?: (z: number) => void };
-                a.setZoom?.(zoom);
-              } catch {
-                /* noop */
-              }
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              bottom: -WATERMARK_PAD,
             }}
-          />
+          >
+            <Spline
+              scene={scene}
+              style={{ width: "100%", height: "100%", background: "transparent" }}
+              onError={() => setFailed(true)}
+              onLoad={(app: unknown) => {
+                try {
+                  const a = app as { setZoom?: (z: number) => void };
+                  a.setZoom?.(zoom);
+                } catch {
+                  /* noop */
+                }
+              }}
+            />
+          </div>
         </Suspense>
       )}
-      {/* Masque le watermark "Built with Spline" — fondu doux vers le fond de la page */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 h-12 w-44"
-        style={{
-          background:
-            "linear-gradient(to top, var(--background) 55%, transparent), linear-gradient(to left, var(--background) 55%, transparent)",
-        }}
-      />
     </div>
   );
 }
+
 
