@@ -8,12 +8,12 @@ export function ProductCard({ product }: { product: Product }) {
       params={{ id: product.id }}
       className="group block"
     >
-      <div className="overflow-hidden rounded-xl bg-card ring-1 ring-border transition-shadow group-hover:ring-turquoise/60">
+      <div className="glass-soft overflow-hidden rounded-2xl transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_30px_60px_-30px_rgba(15,23,42,0.25)] group-hover:ring-1 group-hover:ring-turquoise/40">
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="aspect-square w-full object-contain p-6 sm:p-10"
+          className="aspect-square w-full object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:p-10"
         />
       </div>
       <div className="mt-3 px-0.5">
