@@ -68,31 +68,33 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
     >
       {shouldLoad && !failed && (
         <Suspense fallback={null}>
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              bottom: -WATERMARK_PAD,
+          <Spline
+            scene={scene}
+            style={{ width: "100%", height: "100%", background: "transparent" }}
+            onError={() => setFailed(true)}
+            onLoad={(app: unknown) => {
+              try {
+                const a = app as { setZoom?: (z: number) => void };
+                a.setZoom?.(zoom);
+              } catch {
+                /* noop */
+              }
             }}
-          >
-            <Spline
-              scene={scene}
-              style={{ width: "100%", height: "100%", background: "transparent" }}
-              onError={() => setFailed(true)}
-              onLoad={(app: unknown) => {
-                try {
-                  const a = app as { setZoom?: (z: number) => void };
-                  a.setZoom?.(zoom);
-                } catch {
-                  /* noop */
-                }
-              }}
-            />
-          </div>
+          />
         </Suspense>
       )}
+      {/* Bande de fondu en bas — masque le badge "Built with Spline" et se confond avec la page */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-20"
+        style={{
+          background:
+            "linear-gradient(to top, var(--background) 60%, color-mix(in oklab, var(--background) 70%, transparent) 80%, transparent 100%)",
+        }}
+      />
     </div>
   );
 }
+
 
 
