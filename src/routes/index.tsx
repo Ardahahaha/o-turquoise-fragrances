@@ -22,50 +22,50 @@ function Home() {
     <div>
       {/* HERO — glass card floating over ambient orbs */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-4 pb-8 pt-6 text-center sm:px-6 sm:pb-16 sm:pt-20">
+        <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <div className="relative mx-auto mb-4 w-full max-w-xs sm:max-w-md">
+            <div className="relative mx-auto mb-6 w-full max-w-md">
               <SplineScene
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-                className="mx-auto h-52 w-full overflow-hidden sm:h-72"
+                className="mx-auto h-72 w-full overflow-hidden"
                 zoom={0.3}
               />
               {/* Texte O Turquoise par-dessus l'animation */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center sm:bottom-16">
-                <span className="text-xl font-semibold tracking-[-0.04em] text-foreground/60 sm:text-3xl">
+              <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center sm:bottom-16">
+                <span className="text-2xl font-semibold tracking-[-0.04em] text-foreground/60 sm:text-3xl">
                   O TURQUOISE
                 </span>
               </div>
             </div>
           </Reveal>
           <Reveal>
-            <p className="text-[9px] uppercase tracking-[0.22em] text-muted-foreground sm:text-[10px]">Maison indépendante</p>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mx-auto mt-2 max-w-2xl text-balance text-2xl font-semibold tracking-tight text-foreground sm:mt-3 sm:text-5xl md:text-6xl">
+            <h1 className="mx-auto mt-3 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               La haute parfumerie.
               <br />
               <span className="text-muted-foreground">Choisie avec soin.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mx-auto mt-2 max-w-md text-xs text-muted-foreground sm:mt-5 sm:max-w-lg sm:text-base">
+            <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground sm:mt-5 sm:max-w-lg sm:text-base">
               Une sélection rare de fragrances iconiques, livrées avec exigence.
             </p>
           </Reveal>
           <Reveal delay={360}>
-            <div className="mt-4 flex items-center justify-center gap-3 sm:mt-7">
+            <div className="mt-5 flex items-center justify-center gap-3 sm:mt-7">
               <Link
                 to="/boutique"
-                className="inline-flex items-center justify-center rounded-full bg-foreground px-4 py-1.5 text-[11px] font-medium text-background transition-opacity hover:opacity-90 sm:px-6 sm:py-2.5 sm:text-sm"
+                className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2 text-xs font-medium text-background transition-opacity hover:opacity-90 sm:px-6 sm:py-2.5 sm:text-sm"
               >
                 Acheter
               </Link>
               <Link
                 to="/produit/$id"
                 params={{ id: hero.id }}
-                className="inline-flex items-center justify-center text-[11px] font-medium text-foreground underline-offset-4 hover:underline sm:text-sm"
+                className="inline-flex items-center justify-center text-xs font-medium text-foreground underline-offset-4 hover:underline sm:text-sm"
               >
                 En savoir plus &rsaquo;
               </Link>
@@ -73,19 +73,20 @@ function Home() {
           </Reveal>
 
           <Reveal delay={500}>
-            <div className="relative mx-auto mt-8 max-w-xs sm:mt-14 sm:max-w-lg">
-              <div className="glass mx-auto rounded-3xl p-4 sm:p-10">
+            <div className="relative mx-auto mt-10 max-w-md sm:mt-14 sm:max-w-lg">
+              {/* glow halo */}
+              <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,191,166,0.10),transparent_60%)] blur-2xl" />
+              <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
                 <img
                   src={hero.image}
                   alt={hero.name}
-                  className="mx-auto w-full max-w-[200px] sm:max-w-[380px]"
+                  className="mx-auto w-full max-w-[260px] sm:max-w-[380px]"
                 />
               </div>
             </div>
           </Reveal>
         </div>
       </section>
-
 
       {/* PRODUCT GRID */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">

@@ -57,11 +57,7 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={className}
-      style={{ background: "transparent", position: "relative", overflow: "hidden" }}
-    >
+    <div ref={ref} className={className} style={{ background: "transparent", position: "relative" }}>
       {shouldLoad && !failed && (
         <Suspense fallback={null}>
           <Spline
@@ -79,25 +75,19 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
           />
         </Suspense>
       )}
-      {/* Bande de fondu en bas — masque le badge "Built with Spline" et se confond avec la page */}
+      {/* Masque le watermark "Built with Spline" en bas à droite */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-28"
         style={{
-          background:
-            "linear-gradient(to top, var(--background) 0%, var(--background) 55%, color-mix(in oklab, var(--background) 80%, transparent) 75%, color-mix(in oklab, var(--background) 40%, transparent) 90%, transparent 100%)",
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          width: 220,
+          height: 70,
+          background: "#f1f9f8",
+          pointerEvents: "none",
         }}
       />
-      {/* Petit cache opaque centré sur le badge pour neutraliser tout liseré résiduel */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 h-12 w-44"
-        style={{ background: "var(--background)" }}
-      />
-
     </div>
   );
 }
-
-
-
