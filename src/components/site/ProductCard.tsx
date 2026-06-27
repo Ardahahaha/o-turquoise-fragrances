@@ -8,7 +8,7 @@ export function ProductCard({ product }: { product: Product }) {
       params={{ id: product.id }}
       className="group block"
     >
-      <div className="overflow-hidden rounded-xl bg-secondary">
+      <div className="overflow-hidden rounded-xl bg-card ring-1 ring-border transition-shadow group-hover:ring-turquoise/60">
         <img
           src={product.image}
           alt={product.name}
