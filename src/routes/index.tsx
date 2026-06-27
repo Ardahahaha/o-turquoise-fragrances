@@ -58,9 +58,11 @@ function Home() {
             <div className="mt-5 flex items-center justify-center gap-3 sm:mt-7">
               <Link
                 to="/boutique"
-                className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2 text-xs font-medium text-background transition-opacity hover:opacity-90 sm:px-6 sm:py-2.5 sm:text-sm"
+                className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-full bg-foreground px-6 py-2.5 text-xs font-medium text-background shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] ring-1 ring-foreground/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_rgba(0,191,166,0.45)] sm:px-7 sm:py-3 sm:text-sm"
               >
-                Acheter
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+                <span className="relative">Acheter</span>
+                <svg className="relative h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </Link>
               <Link
                 to="/produit/$id"
