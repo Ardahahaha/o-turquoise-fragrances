@@ -26,7 +26,7 @@ function Home() {
           <Reveal>
             <SplineScene
               scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-              className="mx-auto mb-6 h-48 w-full max-w-sm overflow-hidden sm:h-64 sm:max-w-md md:h-72 md:max-w-lg"
+              className="mx-auto mb-6 h-72 w-full max-w-md overflow-hidden sm:h-96 sm:max-w-2xl md:h-[480px] md:max-w-4xl"
             />
           </Reveal>
           <Reveal>
