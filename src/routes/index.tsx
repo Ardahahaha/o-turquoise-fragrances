@@ -82,7 +82,7 @@ function Home() {
           <Reveal delay={500}>
             <div className="relative mx-auto mt-10 max-w-md sm:mt-14 sm:max-w-lg">
               {/* glow halo */}
-              <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,191,166,0.10),transparent_60%)] blur-2xl" />
+              <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.18),transparent_60%)] blur-2xl" />
               <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
                 <img
                   src={hero.image}
