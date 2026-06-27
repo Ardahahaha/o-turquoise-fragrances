@@ -31,7 +31,7 @@ function Home() {
               <Suspense fallback={null}>
                 <Spline
                   key={splineKey}
-                  scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
+                  scene="https://prod.spline.design/2450e63d-1121-4431-ae81-82d53511496f/scene.splinecode"
                   style={{ width: "100%", height: "100%", background: "transparent" }}
                 />
               </Suspense>
