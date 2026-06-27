@@ -1,4 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import baccaratAsset from "@/assets/baccarat-rouge-540.png.asset.json";
+import bleuAsset from "@/assets/bleu-de-chanel.png.asset.json";
+import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
 
 export type CartItem = {
   id: string;
@@ -6,6 +9,7 @@ export type CartItem = {
   brand: string;
   price: number;
   size: string;
+  image: string;
   quantity: number;
 };
 
@@ -20,7 +24,7 @@ type CartCtx = {
 };
 
 const Ctx = createContext<CartCtx | null>(null);
-const KEY = "oturquoise_cart_v1";
+const KEY = "oturquoise_cart_v2";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
@@ -75,23 +79,77 @@ export function useCart() {
   return ctx;
 }
 
-export const PRODUCT = {
-  id: "baccarat-rouge-540",
-  name: "Baccarat Rouge 540",
-  brand: "Maison Francis Kurkdjian",
-  price: 325,
-  sizes: ["70 ml"],
-  short:
-    "Une signature olfactive iconique. Une trace lumineuse, ambrée et florale, à la fois aérienne et magnétique.",
-  long:
-    "Baccarat Rouge 540 est une fragrance signature de la Maison Francis Kurkdjian. Composée comme une alchimie poétique, elle conjugue la délicatesse florale du jasmin et du safran à la profondeur boisée du cèdre et à la chaleur sensuelle de l'ambre gris. Son sillage lumineux et minéral évoque la sophistication des grands cristaux Baccarat.",
-  notes: {
-    tete: ["Safran", "Jasmin égyptien"],
-    coeur: ["Bois d'ambre", "Résinoïde de cèdre"],
-    fond: ["Ambre gris", "Cèdre du Maroc"],
-  },
+export type Product = {
+  id: string;
+  name: string;
+  brand: string;
+  price: number;
+  sizes: string[];
+  size: string;
+  image: string;
+  tagline: string;
+  description: string;
+  notes: { tete: string[]; coeur: string[]; fond: string[] };
 };
 
+export const PRODUCTS: Product[] = [
+  {
+    id: "baccarat-rouge-540",
+    name: "Baccarat Rouge 540",
+    brand: "Maison Francis Kurkdjian",
+    price: 465,
+    sizes: ["70 ml"],
+    size: "70 ml",
+    image: baccaratAsset.url,
+    tagline: "Extrait de parfum",
+    description:
+      "Une signature olfactive iconique. Un sillage lumineux et minéral, à la fois floral, ambré et boisé, qui évoque la sophistication du cristal Baccarat.",
+    notes: {
+      tete: ["Safran", "Jasmin égyptien"],
+      coeur: ["Bois d'ambre", "Résinoïde de cèdre"],
+      fond: ["Ambre gris", "Cèdre du Maroc"],
+    },
+  },
+  {
+    id: "bleu-de-chanel",
+    name: "Bleu de Chanel",
+    brand: "Chanel",
+    price: 145,
+    sizes: ["100 ml"],
+    size: "100 ml",
+    image: bleuAsset.url,
+    tagline: "Eau de Parfum",
+    description:
+      "Une fragrance boisée et aromatique d'une grande liberté. Une signature masculine et intemporelle, à la fois fraîche, minérale et profondément sensuelle.",
+    notes: {
+      tete: ["Pamplemousse", "Citron", "Menthe"],
+      coeur: ["Encens", "Gingembre", "Iso E Super"],
+      fond: ["Santal", "Cèdre", "Labdanum"],
+    },
+  },
+  {
+    id: "grand-soir",
+    name: "Grand Soir",
+    brand: "Maison Francis Kurkdjian",
+    price: 245,
+    sizes: ["70 ml"],
+    size: "70 ml",
+    image: grandSoirAsset.url,
+    tagline: "Eau de Parfum",
+    description:
+      "Un hymne à Paris, la nuit. Une fragrance chaleureuse, ambrée et enveloppante, où l'élégance se conjugue à la douceur sensuelle du benjoin et de la vanille.",
+    notes: {
+      tete: ["Lavande", "Bergamote"],
+      coeur: ["Amyris", "Benjoin du Laos"],
+      fond: ["Ambre", "Tonka", "Vanille"],
+    },
+  },
+];
+
+export function getProduct(id: string) {
+  return PRODUCTS.find((p) => p.id === id);
+}
+
 export function formatPrice(n: number) {
-  return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(n);
+  return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 }
