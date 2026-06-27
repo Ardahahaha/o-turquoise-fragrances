@@ -84,21 +84,27 @@
     font-weight: 600;
   }
 
-  /* Subtle elevation on all buttons & button-like links */
+  /* Soft elevation on all action buttons & button-like links */
   button:not([data-no-shadow]),
   a.inline-flex:not([data-no-shadow]) {
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 6px 16px -8px rgba(15, 23, 42, 0.10);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.08),
+      0 8px 20px -6px rgba(15, 23, 42, 0.18),
+      0 18px 40px -16px rgba(15, 23, 42, 0.22);
     transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
   button:not([data-no-shadow]):hover,
   a.inline-flex:not([data-no-shadow]):hover {
-    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 14px 28px -10px rgba(15, 23, 42, 0.18);
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.10),
+      0 14px 28px -8px rgba(15, 23, 42, 0.24),
+      0 28px 56px -20px rgba(15, 23, 42, 0.30);
     transform: translateY(-1px);
   }
   button:not([data-no-shadow]):active,
   a.inline-flex:not([data-no-shadow]):active {
     transform: translateY(0);
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.10);
   }
 }
 
