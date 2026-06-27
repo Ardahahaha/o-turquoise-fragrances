@@ -31,10 +31,12 @@ function Home() {
                 zoom={0.3}
               />
               {/* Texte O Turquoise par-dessus l'animation */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center sm:bottom-16">
-                <span className="text-2xl font-semibold tracking-[0.04em] text-turquoise/40 sm:text-3xl">
-                  O TURQUOISE
+              <div className="pointer-events-none absolute inset-x-0 bottom-12 flex flex-col items-center gap-1.5 sm:bottom-16">
+                <span className="h-px w-8 bg-foreground/20" />
+                <span className="font-serif text-2xl italic tracking-[0.02em] text-foreground/80 sm:text-3xl">
+                  O <span className="text-turquoise/80">Turquoise</span>
                 </span>
+                <span className="text-[9px] uppercase tracking-[0.4em] text-foreground/40">Maison de parfum</span>
               </div>
             </div>
           </Reveal>
