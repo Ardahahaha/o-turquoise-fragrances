@@ -19,6 +19,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
+  const [splineKey, setSplineKey] = useState(0);
 
   return (
     <div>
