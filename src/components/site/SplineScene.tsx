@@ -82,8 +82,8 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
           position: "absolute",
           right: 0,
           bottom: 0,
-          width: 160,
-          height: 44,
+          width: 220,
+          height: 70,
           background: "var(--background, #fff)",
           pointerEvents: "none",
         }}
