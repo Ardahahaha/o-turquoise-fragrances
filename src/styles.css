@@ -20,7 +20,6 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary-glow: var(--primary-glow);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -33,46 +32,36 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  --shadow-soft: 0 10px 40px -10px color-mix(in oklab, var(--primary) 18%, transparent);
-  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--primary) 30%, transparent);
-  --shadow-card: 0 4px 20px -4px oklch(0.7 0.02 220 / 0.15);
-  --shadow-glow: 0 0 60px color-mix(in oklab, var(--primary-glow) 40%, transparent);
-
-  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
-  --gradient-soft: linear-gradient(180deg, oklch(0.99 0.01 200), oklch(0.96 0.03 195));
-  --gradient-radial: radial-gradient(circle at 50% 0%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 60%);
-
-  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
+
+  /* Pure white & Apple-like neutrals */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.03 220);
+  --foreground: oklch(0.18 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 220);
+  --card-foreground: oklch(0.18 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 220);
+  --popover-foreground: oklch(0.18 0 0);
 
-  /* Turquoise primary */
-  --primary: oklch(0.68 0.13 195);
+  /* Primary = near-black, Apple style */
+  --primary: oklch(0.2 0 0);
   --primary-foreground: oklch(1 0 0);
-  --primary-glow: oklch(0.82 0.12 190);
 
-  --secondary: oklch(0.97 0.015 200);
-  --secondary-foreground: oklch(0.25 0.04 220);
-  --muted: oklch(0.97 0.01 220);
-  --muted-foreground: oklch(0.5 0.02 220);
-  --accent: oklch(0.94 0.04 195);
-  --accent-foreground: oklch(0.25 0.04 220);
-  --destructive: oklch(0.6 0.22 25);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.93 0.01 220);
-  --input: oklch(0.93 0.01 220);
-  --ring: oklch(0.68 0.13 195);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.5 0 0);
 }
 
 @layer base {
@@ -82,42 +71,25 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    font-weight: 600;
+  }
 }
-
-@utility shadow-soft { box-shadow: var(--shadow-soft); }
-@utility shadow-elegant { box-shadow: var(--shadow-elegant); }
-@utility shadow-card { box-shadow: var(--shadow-card); }
-@utility shadow-glow { box-shadow: var(--shadow-glow); }
-@utility bg-gradient-primary { background-image: var(--gradient-primary); }
-@utility bg-gradient-soft { background-image: var(--gradient-soft); }
-@utility bg-gradient-radial { background-image: var(--gradient-radial); }
 
 @utility text-balance { text-wrap: balance; }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@utility animate-fade-up { animation: fade-up 0.9s var(--ease-elegant) both; }
-@utility animate-fade-in { animation: fade-in 1.2s ease-out both; }
-@utility animate-float { animation: float 6s ease-in-out infinite; }
-
-@utility delay-100 { animation-delay: 0.1s; }
-@utility delay-200 { animation-delay: 0.2s; }
-@utility delay-300 { animation-delay: 0.3s; }
-@utility delay-500 { animation-delay: 0.5s; }
+@utility animate-fade-up { animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility animate-fade-in { animation: fade-in 0.6s ease-out both; }

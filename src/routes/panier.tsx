@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Minus, Plus, Trash2, ShoppingBag, Lock } from "lucide-react";
 import { useCart, formatPrice } from "@/lib/cart";
-import { BottlePlaceholder } from "@/components/site/BottlePlaceholder";
 
 export const Route = createFileRoute("/panier")({
   head: () => ({ meta: [{ title: "Panier — O Turquoise" }] }),
@@ -15,97 +14,104 @@ function Panier() {
 
   if (items.length === 0) {
     return (
-      <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
-        <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-border bg-gradient-soft shadow-soft">
-          <ShoppingBag className="h-6 w-6 text-primary" />
+      <div className="mx-auto max-w-md px-4 py-16 text-center sm:py-24">
+        <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-secondary">
+          <ShoppingBag className="h-5 w-5 text-foreground" />
         </div>
-        <h1 className="mt-6 font-display text-4xl font-light">Votre panier est vide</h1>
-        <p className="mt-3 text-sm text-muted-foreground">Découvrez notre sélection et laissez-vous séduire.</p>
+        <h1 className="mt-5 text-xl font-semibold tracking-tight sm:text-2xl">Votre panier est vide</h1>
+        <p className="mt-2 text-xs text-muted-foreground sm:text-sm">Découvrez notre sélection de parfums.</p>
         <Link
-          to="/produit"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3.5 text-sm font-medium text-background shadow-elegant transition-all hover:bg-primary hover:shadow-glow"
+          to="/boutique"
+          className="mt-5 inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-opacity hover:opacity-90 sm:text-sm"
         >
-          Découvrir le parfum
+          Voir la boutique
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-16">
-      <h1 className="font-display text-4xl font-light sm:text-5xl">Panier</h1>
-      <p className="mt-2 text-sm text-muted-foreground">{items.length} article{items.length > 1 ? "s" : ""}</p>
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
+      <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl">Panier</h1>
+      <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+        {items.length} article{items.length > 1 ? "s" : ""}
+      </p>
 
-      <div className="mt-10 grid gap-10 md:grid-cols-[1fr_360px] md:gap-12">
+      <div className="mt-6 grid gap-8 md:grid-cols-[1fr_320px] md:gap-10">
         {/* Items */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {items.map((item) => (
             <div
               key={`${item.id}-${item.size}`}
-              className="grid grid-cols-[88px_minmax(0,1fr)] gap-4 rounded-2xl border border-border/60 bg-background p-4 shadow-card sm:grid-cols-[120px_minmax(0,1fr)_auto] sm:items-center sm:gap-6"
+              className="grid grid-cols-[64px_minmax(0,1fr)] gap-3 rounded-xl border border-border/70 bg-background p-3 sm:grid-cols-[88px_minmax(0,1fr)_auto] sm:items-center sm:gap-5 sm:p-4"
             >
-              <BottlePlaceholder className="h-24 sm:h-32" label={item.name} />
+              <div className="rounded-lg bg-secondary p-1.5 sm:p-2">
+                <img src={item.image} alt={item.name} className="aspect-square w-full object-contain" />
+              </div>
 
               <div className="min-w-0">
-                <p className="text-xs uppercase tracking-[0.2em] text-primary">{item.brand}</p>
-                <p className="mt-1 truncate font-display text-lg">{item.name}</p>
-                <p className="text-xs text-muted-foreground">{item.size}</p>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">{item.brand}</p>
+                <p className="mt-0.5 truncate text-sm font-medium">{item.name}</p>
+                <p className="text-[11px] text-muted-foreground">{item.size}</p>
 
-                <div className="mt-3 flex items-center gap-3 sm:hidden">
+                <div className="mt-2 flex items-center gap-2 sm:hidden">
                   <QtyControl
                     qty={item.quantity}
                     onMinus={() => setQty(item.id, item.size, item.quantity - 1)}
                     onPlus={() => setQty(item.id, item.size, item.quantity + 1)}
                   />
-                  <span className="ml-auto font-display text-lg">{formatPrice(item.price * item.quantity)}</span>
+                  <span className="ml-auto text-sm font-medium">{formatPrice(item.price * item.quantity)}</span>
                 </div>
               </div>
 
-              <div className="hidden flex-col items-end gap-3 sm:flex">
+              <div className="hidden flex-col items-end gap-2 sm:flex">
                 <QtyControl
                   qty={item.quantity}
                   onMinus={() => setQty(item.id, item.size, item.quantity - 1)}
                   onPlus={() => setQty(item.id, item.size, item.quantity + 1)}
                 />
-                <span className="font-display text-xl">{formatPrice(item.price * item.quantity)}</span>
+                <span className="text-base font-medium">{formatPrice(item.price * item.quantity)}</span>
                 <button
                   onClick={() => remove(item.id, item.size)}
-                  className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-destructive"
+                  className="inline-flex items-center gap-1 text-[11px] text-muted-foreground hover:text-destructive"
                 >
-                  <Trash2 className="h-3.5 w-3.5" /> Retirer
+                  <Trash2 className="h-3 w-3" /> Retirer
                 </button>
               </div>
 
               <button
                 onClick={() => remove(item.id, item.size)}
-                className="col-span-2 -mt-1 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-destructive sm:hidden"
+                className="col-span-2 inline-flex items-center gap-1 text-[11px] text-muted-foreground hover:text-destructive sm:hidden"
               >
-                <Trash2 className="h-3.5 w-3.5" /> Retirer
+                <Trash2 className="h-3 w-3" /> Retirer
               </button>
             </div>
           ))}
 
-          <button onClick={clear} className="text-xs text-muted-foreground underline-offset-4 hover:underline">
+          <button onClick={clear} className="text-[11px] text-muted-foreground underline-offset-4 hover:underline">
             Vider le panier
           </button>
         </div>
 
         {/* Summary */}
-        <aside className="h-fit rounded-2xl border border-border/60 bg-gradient-soft p-6 shadow-elegant md:sticky md:top-24">
-          <h2 className="font-display text-2xl">Résumé</h2>
-          <dl className="mt-6 space-y-3 text-sm">
+        <aside className="h-fit rounded-xl border border-border/70 bg-secondary/40 p-5 md:sticky md:top-20">
+          <h2 className="text-base font-semibold sm:text-lg">Résumé</h2>
+          <dl className="mt-4 space-y-2 text-xs sm:text-sm">
             <Row label="Sous-total" value={formatPrice(total)} />
             <Row label="Livraison" value={shipping === 0 ? "Offerte" : formatPrice(shipping)} />
-            <div className="border-t border-border/60 pt-3">
-              <Row label={<span className="font-display text-lg text-foreground">Total</span>} value={<span className="font-display text-2xl">{formatPrice(grand)}</span>} />
+            <div className="border-t border-border/70 pt-2">
+              <Row
+                label={<span className="text-sm font-medium text-foreground">Total</span>}
+                value={<span className="text-base font-semibold">{formatPrice(grand)}</span>}
+              />
             </div>
           </dl>
 
-          <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background shadow-elegant transition-all hover:bg-primary hover:shadow-glow">
-            <Lock className="h-4 w-4" /> Valider ma commande
+          <button className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-opacity hover:opacity-90 sm:text-sm">
+            <Lock className="h-3.5 w-3.5" /> Valider ma commande
           </button>
 
-          <p className="mt-4 text-center text-xs text-muted-foreground">
+          <p className="mt-3 text-center text-[11px] text-muted-foreground">
             Paiement sécurisé · Retours 14 jours
           </p>
         </aside>
@@ -117,12 +123,12 @@ function Panier() {
 function QtyControl({ qty, onMinus, onPlus }: { qty: number; onMinus: () => void; onPlus: () => void }) {
   return (
     <div className="inline-flex items-center rounded-full border border-border bg-background">
-      <button onClick={onMinus} className="grid h-9 w-9 place-items-center rounded-l-full transition-colors hover:bg-secondary" aria-label="Diminuer">
-        <Minus className="h-3.5 w-3.5" />
+      <button onClick={onMinus} className="grid h-7 w-7 place-items-center rounded-l-full hover:bg-secondary" aria-label="Diminuer">
+        <Minus className="h-3 w-3" />
       </button>
-      <span className="w-8 text-center text-sm">{qty}</span>
-      <button onClick={onPlus} className="grid h-9 w-9 place-items-center rounded-r-full transition-colors hover:bg-secondary" aria-label="Augmenter">
-        <Plus className="h-3.5 w-3.5" />
+      <span className="w-7 text-center text-xs">{qty}</span>
+      <button onClick={onPlus} className="grid h-7 w-7 place-items-center rounded-r-full hover:bg-secondary" aria-label="Augmenter">
+        <Plus className="h-3 w-3" />
       </button>
     </div>
   );
@@ -130,7 +136,7 @@ function QtyControl({ qty, onMinus, onPlus }: { qty: number; onMinus: () => void
 
 function Row({ label, value }: { label: React.ReactNode; value: React.ReactNode }) {
   return (
-    <div className="flex items-baseline justify-between gap-4">
+    <div className="flex items-baseline justify-between gap-3">
       <dt className="text-muted-foreground">{label}</dt>
       <dd className="text-foreground">{value}</dd>
     </div>

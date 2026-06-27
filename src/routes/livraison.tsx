@@ -13,31 +13,25 @@ export const Route = createFileRoute("/livraison")({
 
 function Livraison() {
   return (
-    <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
-      <h1 className="font-display text-5xl font-light sm:text-6xl">Livraison & retours</h1>
-      <p className="mt-4 text-base text-muted-foreground">
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
+      <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl">Livraison & retours</h1>
+      <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
         Une expérience d'achat à la hauteur de nos parfums.
       </p>
 
-      <div className="mt-12 space-y-5">
-        <Card icon={<Truck className="h-5 w-5" />} title="Expédition rapide">
-          Vos commandes sont préparées et expédiées sous 24 à 48 heures ouvrées depuis nos ateliers.
-          Suivi de colis envoyé par email.
+      <div className="mt-8 space-y-3">
+        <Card icon={<Truck className="h-4 w-4" />} title="Expédition rapide">
+          Commandes préparées et expédiées sous 24 à 48 h ouvrées. Suivi par email.
         </Card>
-
-        <Card icon={<Package className="h-5 w-5" />} title="Livraison soignée">
-          Livraison standard à <strong className="text-foreground">9,90 €</strong> en France métropolitaine (3 à 5 jours).
-          <br />
-          <strong className="text-foreground">Livraison offerte</strong> dès 200 € d'achat.
+        <Card icon={<Package className="h-4 w-4" />} title="Livraison soignée">
+          Livraison standard <strong className="text-foreground">9,90 €</strong> en France (3 à 5 jours).{" "}
+          <strong className="text-foreground">Offerte</strong> dès 200 €.
         </Card>
-
-        <Card icon={<RotateCcw className="h-5 w-5" />} title="Retours sous 14 jours">
-          Vous disposez de 14 jours pour nous retourner un produit non ouvert et non utilisé, dans son emballage d'origine.
-          Le remboursement est effectué sous 7 jours après réception.
+        <Card icon={<RotateCcw className="h-4 w-4" />} title="Retours sous 14 jours">
+          14 jours pour retourner un produit non ouvert dans son emballage d'origine. Remboursement sous 7 jours.
         </Card>
-
-        <Card icon={<ShieldCheck className="h-5 w-5" />} title="Authenticité garantie">
-          Tous nos parfums sont 100% authentiques, conservés dans des conditions optimales, scellés d'origine.
+        <Card icon={<ShieldCheck className="h-4 w-4" />} title="Authenticité garantie">
+          Tous nos parfums sont 100% authentiques, scellés d'origine.
         </Card>
       </div>
     </div>
@@ -46,14 +40,14 @@ function Livraison() {
 
 function Card({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-card transition-all hover:shadow-elegant">
-      <div className="flex items-start gap-4">
-        <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-soft text-primary shadow-soft">
+    <div className="rounded-xl border border-border/70 bg-background p-4 sm:p-5">
+      <div className="flex items-start gap-3">
+        <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-secondary text-foreground">
           {icon}
         </div>
         <div className="min-w-0">
-          <h2 className="font-display text-xl">{title}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{children}</p>
+          <h2 className="text-sm font-medium sm:text-base">{title}</h2>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">{children}</p>
         </div>
       </div>
     </div>
