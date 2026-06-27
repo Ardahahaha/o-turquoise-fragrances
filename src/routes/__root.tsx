@@ -82,12 +82,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Boutique indépendante de parfums de luxe." },
       { property: "og:type", content: "website" },
     ],
+    scripts: [
+      {
+        type: "module",
+        src: "https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js",
+      },
+    ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" },
     ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,

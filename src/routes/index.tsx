@@ -23,8 +23,19 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
+            <div className="mx-auto mb-4 h-24 w-24 sm:h-32 sm:w-32">
+              {/* @ts-expect-error - spline-viewer is a custom element */}
+              <spline-viewer
+                url="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
+                style={{ width: "100%", height: "100%", background: "transparent" }}
+                events-target="global"
+              />
+            </div>
+          </Reveal>
+          <Reveal>
             <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
           </Reveal>
+
           <Reveal delay={120}>
             <h1 className="mx-auto mt-3 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               La haute parfumerie.
