@@ -57,12 +57,12 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
   }, []);
 
   return (
-    <div ref={ref} className={className} style={{ background: "#eaeaea", position: "relative" }}>
+    <div ref={ref} className={className} style={{ background: "var(--background)", position: "relative" }}>
       {shouldLoad && !failed && (
         <Suspense fallback={null}>
           <Spline
             scene={scene}
-            style={{ width: "100%", height: "100%", background: "#eaeaea" }}
+            style={{ width: "100%", height: "100%", background: "var(--background)" }}
             onError={() => setFailed(true)}
             onLoad={(app: unknown) => {
               try {
@@ -85,7 +85,7 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
           width: 220,
           height: 70,
           background:
-            "radial-gradient(ellipse at 70% 70%, #eaeaea 55%, rgba(234,234,234,0.92) 75%, rgba(234,234,234,0) 100%)",
+            "radial-gradient(ellipse at 70% 70%, var(--background) 55%, color-mix(in oklab, var(--background) 92%, transparent) 75%, transparent 100%)",
           pointerEvents: "none",
         }}
       />
