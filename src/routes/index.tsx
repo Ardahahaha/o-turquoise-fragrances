@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Truck, ShieldCheck, RotateCcw } from "lucide-react";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
-  const [splineKey, setSplineKey] = useState(0);
+  const splineKey = 0;
 
   return (
     <div>
@@ -27,7 +27,7 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <div className="mx-auto mb-4 h-24 w-24 sm:h-32 sm:w-32">
+            <div className="mx-auto mb-6 h-56 w-full max-w-md overflow-hidden sm:h-72">
               <Suspense fallback={null}>
                 <Spline
                   key={splineKey}
@@ -35,16 +35,6 @@ function Home() {
                   style={{ width: "100%", height: "100%", background: "transparent" }}
                 />
               </Suspense>
-            </div>
-            <div className="mt-2 flex justify-center">
-              <button
-                type="button"
-                onClick={() => setSplineKey((k) => k + 1)}
-                data-no-shadow
-                className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
-              >
-                Rafraîchir l'animation
-              </button>
             </div>
           </Reveal>
           <Reveal>
