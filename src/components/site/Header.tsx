@@ -18,7 +18,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:h-14 sm:px-6">
-        <Link to="/" className="flex items-center gap-1.5" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <span className="h-1.5 w-1.5 rounded-full bg-turquoise" aria-hidden />
           <span className="text-[15px] font-semibold tracking-tight text-foreground sm:text-base">
             O Turquoise
           </span>
