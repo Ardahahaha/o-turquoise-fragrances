@@ -32,7 +32,7 @@ function Home() {
               />
               {/* Texte O Turquoise par-dessus l'animation */}
               <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center sm:bottom-16">
-                <span className="text-2xl font-semibold tracking-[0.04em] text-foreground/60 sm:text-3xl">
+                <span className="text-2xl font-semibold tracking-[-0.04em] text-foreground/60 sm:text-3xl">
                   O TURQUOISE
                 </span>
               </div>
