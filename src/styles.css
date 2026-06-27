@@ -41,7 +41,7 @@
   --radius: 0.75rem;
 
   /* Warm cream background, pure white cards, turquoise as topstitch accent */
-  --background: oklch(0.985 0.008 85);
+  --background: oklch(0.994 0.003 85);
   --foreground: oklch(0.18 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0 0);
