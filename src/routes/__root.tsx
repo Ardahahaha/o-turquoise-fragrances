@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/lib/cart";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { AmbientBackground } from "@/components/site/AmbientBackground";
 
 function NotFoundComponent() {
   return (
@@ -112,7 +113,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
-        <div className="flex min-h-screen flex-col bg-background">
+        <AmbientBackground />
+        <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
             <Outlet />
