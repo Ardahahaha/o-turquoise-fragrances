@@ -31,7 +31,14 @@ function Home() {
                 key={splineKey}
                 scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
                 className="mx-auto h-72 w-full overflow-hidden"
+                zoom={0.55}
               />
+              {/* Texte O Turquoise par-dessus l'animation */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center">
+                <span className="text-lg font-semibold tracking-[0.18em] text-foreground/90 sm:text-xl">
+                  O TURQUOISE
+                </span>
+              </div>
               <button
                 type="button"
                 onClick={() => setSplineKey((k) => k + 1)}
