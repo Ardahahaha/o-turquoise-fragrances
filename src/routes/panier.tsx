@@ -123,11 +123,11 @@ function Panier() {
 function QtyControl({ qty, onMinus, onPlus }: { qty: number; onMinus: () => void; onPlus: () => void }) {
   return (
     <div className="inline-flex items-center rounded-full border border-border bg-background">
-      <button onClick={onMinus} className="grid h-7 w-7 place-items-center rounded-l-full hover:bg-secondary" aria-label="Diminuer">
+      <button onClick={onMinus} className="grid h-7 w-7 place-items-center rounded-l-full hover:bg-secondary" aria-label="Diminuer" data-no-shadow>
         <Minus className="h-3 w-3" />
       </button>
       <span className="w-7 text-center text-xs">{qty}</span>
-      <button onClick={onPlus} className="grid h-7 w-7 place-items-center rounded-r-full hover:bg-secondary" aria-label="Augmenter">
+      <button onClick={onPlus} className="grid h-7 w-7 place-items-center rounded-r-full hover:bg-secondary" aria-label="Augmenter" data-no-shadow>
         <Plus className="h-3 w-3" />
       </button>
     </div>

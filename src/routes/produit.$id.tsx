@@ -88,7 +88,7 @@ function ProductPage() {
               <div className="inline-flex items-center rounded-full border border-border bg-background">
                 <button
                   onClick={() => setQty((q) => Math.max(1, q - 1))}
-                  className="grid h-8 w-8 place-items-center rounded-l-full hover:bg-secondary"
+                  className="grid h-8 w-8 place-items-center rounded-l-full hover:bg-secondary" data-no-shadow
                   aria-label="Diminuer"
                 >
                   <Minus className="h-3 w-3" />
@@ -96,7 +96,7 @@ function ProductPage() {
                 <span className="w-8 text-center text-xs font-medium">{qty}</span>
                 <button
                   onClick={() => setQty((q) => q + 1)}
-                  className="grid h-8 w-8 place-items-center rounded-r-full hover:bg-secondary"
+                  className="grid h-8 w-8 place-items-center rounded-r-full hover:bg-secondary" data-no-shadow
                   aria-label="Augmenter"
                 >
                   <Plus className="h-3 w-3" />
