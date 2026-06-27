@@ -5,6 +5,7 @@ const Spline = lazy(() => import("@splinetool/react-spline"));
 type Props = {
   scene: string;
   className?: string;
+  zoom?: number;
 };
 
 /**
