@@ -84,7 +84,8 @@ export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
           bottom: 0,
           width: 220,
           height: 70,
-          background: "#f3fbf9",
+          background:
+            "radial-gradient(ellipse at 70% 70%, #eaeaea 55%, rgba(234,234,234,0.92) 75%, rgba(234,234,234,0) 100%)",
           pointerEvents: "none",
         }}
       />
