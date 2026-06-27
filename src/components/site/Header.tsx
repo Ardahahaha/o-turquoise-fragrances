@@ -43,7 +43,7 @@ export function Header() {
           <Link
             to="/panier"
             className="relative inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-secondary"
-            aria-label="Panier"
+            aria-label="Panier" data-no-shadow
           >
             <ShoppingBag className="h-4 w-4" />
             {count > 0 && (
@@ -56,7 +56,7 @@ export function Header() {
             type="button"
             onClick={() => setOpen((o) => !o)}
             className="inline-flex h-8 w-8 items-center justify-center rounded-full hover:bg-secondary md:hidden"
-            aria-label="Menu"
+            aria-label="Menu" data-no-shadow
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>

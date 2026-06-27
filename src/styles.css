@@ -41,7 +41,7 @@
   --radius: 0.75rem;
 
   /* Warm cream background, pure white cards, turquoise as topstitch accent */
-  --background: oklch(0.985 0.008 85);
+  --background: oklch(0.994 0.003 85);
   --foreground: oklch(0.18 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0 0);
@@ -82,6 +82,23 @@
     font-family: var(--font-display);
     letter-spacing: -0.022em;
     font-weight: 600;
+  }
+
+  /* Subtle elevation on all buttons & button-like links */
+  button:not([data-no-shadow]),
+  a.inline-flex:not([data-no-shadow]) {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 6px 16px -8px rgba(15, 23, 42, 0.10);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  button:not([data-no-shadow]):hover,
+  a.inline-flex:not([data-no-shadow]):hover {
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 14px 28px -10px rgba(15, 23, 42, 0.18);
+    transform: translateY(-1px);
+  }
+  button:not([data-no-shadow]):active,
+  a.inline-flex:not([data-no-shadow]):active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
   }
 }
 
