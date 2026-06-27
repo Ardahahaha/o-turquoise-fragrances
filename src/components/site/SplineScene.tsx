@@ -13,7 +13,7 @@ type Props = {
  * after the browser is idle. Reduces initial JS, improves LCP / Lighthouse.
  * Renders nothing visible on error so no dark square shows.
  */
-export function SplineScene({ scene, className }: Props) {
+export function SplineScene({ scene, className, zoom = 0.6 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
   const [failed, setFailed] = useState(false);
