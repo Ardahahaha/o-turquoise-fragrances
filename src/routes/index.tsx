@@ -58,14 +58,14 @@ function Home() {
             <div className="mt-5 flex items-center justify-center gap-3 sm:mt-7">
               <Link
                 to="/boutique"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-[rgba(198,160,110,0.45)] bg-[rgba(220,185,140,0.35)] px-8 py-3.5 text-sm font-medium text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),inset_0_-8px_14px_-6px_rgba(190,150,95,0.7),0_14px_36px_-10px_rgba(190,150,95,0.75)] backdrop-blur-xl backdrop-saturate-150 transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(198,160,110,0.7)] hover:bg-[rgba(220,185,140,0.5)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),inset_0_-10px_18px_-6px_rgba(190,150,95,0.85),0_24px_50px_-12px_rgba(190,150,95,0.9)] sm:px-10 sm:py-4 sm:text-base"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-[rgba(30,60,110,0.5)] bg-[rgba(40,75,130,0.35)] px-8 py-3.5 text-sm font-medium text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),inset_0_-8px_14px_-6px_rgba(20,45,95,0.75),0_14px_36px_-10px_rgba(20,45,95,0.7)] backdrop-blur-xl backdrop-saturate-150 transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(30,60,110,0.75)] hover:bg-[rgba(40,75,130,0.5)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.85),inset_0_-10px_18px_-6px_rgba(20,45,95,0.9),0_24px_50px_-12px_rgba(20,45,95,0.85)] sm:px-10 sm:py-4 sm:text-base"
               >
                 {/* Specular highlight */}
                 <span className="pointer-events-none absolute inset-x-3 top-0 h-1/2 rounded-full bg-gradient-to-b from-white/70 to-transparent opacity-80" />
                 {/* Liquid shimmer sweep */}
                 <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
-                {/* Beige glow underlay */}
-                <span className="pointer-events-none absolute -inset-1 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(190,150,95,0.85),transparent_70%)] opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Deep blue glow underlay */}
+                <span className="pointer-events-none absolute -inset-1 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(20,45,95,0.85),transparent_70%)] opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="relative">Acheter</span>
                 <svg className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </Link>
