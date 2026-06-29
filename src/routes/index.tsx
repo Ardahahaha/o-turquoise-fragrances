@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { DisplayCards } from "@/components/site/DisplayCards";
+import { Truck, ShieldCheck, Sparkles } from "lucide-react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -156,12 +156,38 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUST — stacked display cards */}
+      {/* TRUST — simple reassurance cards */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-4 py-16 pb-24 sm:px-6 sm:py-20 sm:pb-28">
+        <div className="mx-auto max-w-6xl px-4 py-12 pb-16 sm:px-6 sm:py-20 sm:pb-28">
           <Reveal>
-            <div className="flex w-full items-end justify-center">
-              <DisplayCards />
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+              <div className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] ring-1 ring-black/[0.03]">
+                <span className="inline-flex rounded-full bg-turquoise/10 p-1.5 text-turquoise">
+                  <Truck className="h-4 w-4" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Livraison soignée</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Expédition rapide et suivie.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] ring-1 ring-black/[0.03]">
+                <span className="inline-flex rounded-full bg-turquoise/10 p-1.5 text-turquoise">
+                  <ShieldCheck className="h-4 w-4" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Authenticité garantie</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Flacons originaux scellés.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] ring-1 ring-black/[0.03]">
+                <span className="inline-flex rounded-full bg-turquoise/10 p-1.5 text-turquoise">
+                  <Sparkles className="h-4 w-4" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Livraison offerte</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Sur toutes les commandes.</p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
