@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck, Gift } from "lucide-react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
