@@ -66,7 +66,7 @@ function ProductPage() {
           </div>
           {gallery.length > 1 && (
             <div className="mt-3 flex gap-2 sm:mt-4 sm:gap-3">
-              {gallery.map((src, i) => (
+              {gallery.map((src: string, i: number) => (
                 <button
                   key={src}
                   onClick={() => setActiveImg(i)}
