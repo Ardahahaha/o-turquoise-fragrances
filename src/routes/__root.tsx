@@ -85,10 +85,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        type: "module",
-        src: "https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js",
-      },
-      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
