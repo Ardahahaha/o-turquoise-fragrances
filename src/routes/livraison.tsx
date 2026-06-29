@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Truck, RotateCcw, ShieldCheck, Package } from "lucide-react";
+import { Truck, ShieldCheck, Package } from "lucide-react";
 
 export const Route = createFileRoute("/livraison")({
   head: () => ({
     meta: [
-      { title: "Livraison & retours — O Turquoise" },
-      { name: "description", content: "Modalités de livraison et politique de retours O Turquoise." },
+      { title: "Livraison — O Turquoise" },
+      { name: "description", content: "Modalités de livraison O Turquoise." },
     ],
   }),
   component: Livraison,
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/livraison")({
 function Livraison() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
-      <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl">Livraison & retours</h1>
+      <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl">Livraison</h1>
       <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
         Une expérience d'achat à la hauteur de nos parfums.
       </p>
@@ -26,9 +26,6 @@ function Livraison() {
         <Card icon={<Package className="h-4 w-4" />} title="Livraison soignée">
           Livraison standard <strong className="text-foreground">9,90 €</strong> en France (3 à 5 jours).{" "}
           <strong className="text-foreground">Offerte</strong> dès 200 €.
-        </Card>
-        <Card icon={<RotateCcw className="h-4 w-4" />} title="Retours sous 14 jours">
-          14 jours pour retourner un produit non ouvert dans son emballage d'origine. Remboursement sous 7 jours.
         </Card>
         <Card icon={<ShieldCheck className="h-4 w-4" />} title="Authenticité garantie">
           Tous nos parfums sont 100% authentiques, scellés d'origine.

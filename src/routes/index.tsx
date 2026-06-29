@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck, RotateCcw } from "lucide-react";
+import { Truck, ShieldCheck } from "lucide-react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -145,10 +145,9 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
           <Reveal>
-            <div className="glass grid gap-5 rounded-2xl p-5 sm:grid-cols-3 sm:gap-6 sm:p-8">
+            <div className="glass grid gap-5 rounded-2xl p-5 sm:grid-cols-2 sm:gap-6 sm:p-8">
               <Trust icon={<Truck className="h-4 w-4" />} title="Livraison soignée" text="Expédition rapide et suivie." />
               <Trust icon={<ShieldCheck className="h-4 w-4" />} title="Authenticité garantie" text="Flacons originaux scellés." />
-              <Trust icon={<RotateCcw className="h-4 w-4" />} title="Retours 14 jours" text="Simple, sans condition." />
             </div>
           </Reveal>
         </div>

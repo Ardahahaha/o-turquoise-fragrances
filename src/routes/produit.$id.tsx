@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { Minus, Plus, Check, Truck, RotateCcw, ShieldCheck } from "lucide-react";
+import { Minus, Plus, Check, Truck, ShieldCheck } from "lucide-react";
 import { getProduct, formatPrice, useCart } from "@/lib/cart";
 
 export const Route = createFileRoute("/produit/$id")({
@@ -158,7 +158,6 @@ function ProductPage() {
           {/* Shipping mini */}
           <div className="mt-6 grid gap-2 border-t border-border/70 pt-5 text-xs sm:text-sm">
             <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte dès 200 €" />
-            <Mini icon={<RotateCcw className="h-3.5 w-3.5" />} text="Retours sous 14 jours" />
             <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Authenticité garantie" />
           </div>
         </div>
