@@ -157,7 +157,7 @@ function ProductPage() {
 
           {/* Shipping mini */}
           <div className="mt-6 grid gap-2 border-t border-border/70 pt-5 text-xs sm:text-sm">
-            <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte dès 200 €" />
+            <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte" />
             <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Authenticité garantie" />
           </div>
         </div>

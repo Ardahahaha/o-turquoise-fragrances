@@ -9,7 +9,7 @@ export const Route = createFileRoute("/panier")({
 
 function Panier() {
   const { items, setQty, remove, total, clear } = useCart();
-  const shipping = total > 0 && total < 200 ? 9.9 : 0;
+  const shipping = 0;
   const grand = total + shipping;
 
   if (items.length === 0) {
