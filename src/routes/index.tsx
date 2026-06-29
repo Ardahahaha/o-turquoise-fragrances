@@ -102,10 +102,9 @@ function Home() {
               <OttomanRosette className="h-8 w-8 text-turquoise/25 sm:h-10 sm:w-10" />
             </div>
             <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
-            <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-turquoise/20 bg-turquoise/5 px-2.5 py-1">
-              <ShieldCheck className="h-3 w-3 text-turquoise" />
-              <span className="text-[10px] font-medium uppercase tracking-wider text-turquoise">Parfums authentiques officiels</span>
-            </div>
+            <p className="mx-auto mt-2 max-w-xs text-[11px] leading-relaxed text-muted-foreground sm:max-w-sm sm:text-xs">
+              Parfums 100% authentiques : flacons neufs, scellés d'origine et issus du circuit officiel des grandes maisons.
+            </p>
           </Reveal>
 
           <Reveal delay={120}>
