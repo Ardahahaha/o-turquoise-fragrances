@@ -160,7 +160,7 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 sm:py-8">
           <Reveal>
-            <div className="flex min-h-[220px] w-full items-center justify-center py-0">
+            <div className="flex min-h-[220px] w-full items-center justify-end py-0">
               <div className="w-full max-w-3xl">
                 <DisplayCards />
               </div>
