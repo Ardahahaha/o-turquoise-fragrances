@@ -134,7 +134,7 @@ function Home() {
 
 
       {/* PRODUCT GRID */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
+      <section className="mx-auto max-w-6xl px-4 pt-12 pb-4 sm:px-6 sm:pt-20 sm:pb-6">
         <Reveal>
           <div className="mb-6 flex items-end justify-between sm:mb-10">
             <div>
