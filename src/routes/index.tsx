@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck } from "lucide-react";
+import { DisplayCards } from "@/components/site/DisplayCards";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -156,31 +156,18 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUST */}
+      {/* TRUST — stacked display cards */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <Reveal>
-            <div className="glass grid gap-5 rounded-2xl p-5 sm:grid-cols-2 sm:gap-6 sm:p-8">
-              <Trust icon={<Truck className="h-4 w-4" />} title="Livraison soignée" text="Expédition rapide et suivie." />
-              <Trust icon={<ShieldCheck className="h-4 w-4" />} title="Authenticité garantie" text="Flacons originaux scellés." />
+            <div className="flex min-h-[400px] w-full items-center justify-center py-10">
+              <div className="w-full max-w-3xl">
+                <DisplayCards />
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
-    </div>
-  );
-}
-
-function Trust({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
-  return (
-    <div className="flex items-start gap-3">
-      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/70 text-foreground ring-1 ring-white/80 backdrop-blur">
-        {icon}
-      </span>
-      <div className="min-w-0">
-        <p className="text-sm font-medium">{title}</p>
-        <p className="mt-0.5 text-xs text-muted-foreground">{text}</p>
-      </div>
     </div>
   );
 }
