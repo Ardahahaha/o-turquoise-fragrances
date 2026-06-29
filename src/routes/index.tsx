@@ -158,9 +158,9 @@ function Home() {
 
       {/* TRUST — stacked display cards */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 sm:py-8">
           <Reveal>
-            <div className="flex min-h-[280px] w-full items-center justify-center py-4">
+            <div className="flex min-h-[220px] w-full items-center justify-center py-0">
               <div className="w-full max-w-3xl">
                 <DisplayCards />
               </div>
