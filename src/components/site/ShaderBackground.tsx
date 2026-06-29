@@ -18,7 +18,8 @@ export function ShaderBackground() {
         swirl={0.85}
       />
       {/* Soft white wash to keep the site readable */}
-      <div className="absolute inset-0 bg-white/80" />
+      <div className="absolute inset-0 bg-white/90" />
+
 
     </div>
   );
