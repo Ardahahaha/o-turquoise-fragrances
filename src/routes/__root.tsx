@@ -78,19 +78,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "O Turquoise — Parfums d'exception" },
       { name: "description", content: "O Turquoise, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
-      { property: "og:title", content: "O Turquoise — Parfums d'exception" },
-      { property: "og:description", content: "O Turquoise, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
       { property: "og:type", content: "website" },
-      { name: "twitter:title", content: "O Turquoise — Parfums d'exception" },
-      { name: "twitter:description", content: "O Turquoise, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a4e34b78-199e-4d7f-b7bc-ca83b39a804f" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a4e34b78-199e-4d7f-b7bc-ca83b39a804f" },
+      { property: "og:site_name", content: "O Turquoise" },
+      { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
       {
         type: "module",
         src: "https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js",
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "O Turquoise",
+          url: "https://oturquoise.lovable.app",
+          description: "Boutique indépendante en ligne de parfums de luxe.",
+        }),
       },
     ],
     links: [

@@ -4,9 +4,14 @@ import { Sparkles, Heart, Award } from "lucide-react";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos — O Turquoise" },
-      { name: "description", content: "L'histoire et les valeurs de O Turquoise, boutique indépendante de parfums d'exception." },
+      { title: "À propos — La maison O Turquoise" },
+      { name: "description", content: "L'histoire et les valeurs d'O Turquoise, boutique indépendante dédiée à la haute parfumerie et aux fragrances iconiques." },
+      { property: "og:title", content: "À propos — O Turquoise" },
+      { property: "og:description", content: "L'art du parfum, en toute simplicité. Découvrez notre maison indépendante." },
+      { property: "og:url", content: "https://oturquoise.lovable.app/a-propos" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/a-propos" }],
   }),
   component: About,
 });

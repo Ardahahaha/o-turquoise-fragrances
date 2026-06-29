@@ -4,9 +4,14 @@ import { Truck, ShieldCheck, Package } from "lucide-react";
 export const Route = createFileRoute("/livraison")({
   head: () => ({
     meta: [
-      { title: "Livraison — O Turquoise" },
-      { name: "description", content: "Modalités de livraison O Turquoise." },
+      { title: "Livraison offerte en France — O Turquoise" },
+      { name: "description", content: "Expédition sous 24 à 48 h ouvrées, livraison standard offerte en France métropolitaine (3 à 5 jours). Authenticité garantie." },
+      { property: "og:title", content: "Livraison — O Turquoise" },
+      { property: "og:description", content: "Livraison offerte en France métropolitaine, expédition rapide et suivie." },
+      { property: "og:url", content: "https://oturquoise.lovable.app/livraison" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/livraison" }],
   }),
   component: Livraison,
 });
