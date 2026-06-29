@@ -43,10 +43,8 @@ export const Route = createFileRoute("/")({
         { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
         { property: "og:url", content: "https://oturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
-        ...(heroImg ? [
-          { property: "og:image" as const, content: heroImg },
-          { name: "twitter:image" as const, content: heroImg },
-        ] : []),
+        { property: "og:image" as const, content: ogImage },
+        { name: "twitter:image" as const, content: ogImage },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
         { name: "twitter:description", content: "Parfums de luxe authentiques. Livraison offerte en France." },
