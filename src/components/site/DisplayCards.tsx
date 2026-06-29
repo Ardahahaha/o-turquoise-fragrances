@@ -24,7 +24,7 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-background/70 px-4 py-3 backdrop-blur-sm transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-foreground/20 hover:bg-background [&>*]:flex [&>*]:items-center [&>*]:gap-2",
+        "relative flex h-28 w-64 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-background/70 px-3 py-2.5 backdrop-blur-sm transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[18rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-foreground/20 hover:bg-background [&>*]:flex [&>*]:items-center [&>*]:gap-2",
         className,
       )}
     >
@@ -32,10 +32,10 @@ function DisplayCard({
         <span className={cn("relative inline-block rounded-full bg-turquoise/10 p-1", iconClassName)}>
           {icon}
         </span>
-        <p className={cn("text-lg font-semibold", titleClassName)}>{title}</p>
+        <p className={cn("text-sm font-semibold", titleClassName)}>{title}</p>
       </div>
-      <p className="whitespace-nowrap text-sm text-muted-foreground">{description}</p>
-      <p className="text-xs text-muted-foreground/70">{date}</p>
+      <p className="whitespace-nowrap text-xs text-muted-foreground">{description}</p>
+      <p className="text-[10px] text-muted-foreground/70">{date}</p>
     </div>
   );
 }
