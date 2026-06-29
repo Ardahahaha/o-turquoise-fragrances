@@ -1,7 +1,12 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import baccaratAsset from "@/assets/baccarat-rouge-540.png.asset.json";
+import baccaratAlt1 from "@/assets/baccarat-alt-1.png.asset.json";
+import baccaratAlt2 from "@/assets/baccarat-alt-2.png.asset.json";
 import bleuAsset from "@/assets/bleu-de-chanel.png.asset.json";
+import bleuAlt1 from "@/assets/bleu-de-chanel-alt-1.png.asset.json";
 import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
+import grandSoirAlt1 from "@/assets/grand-soir-alt-1.png.asset.json";
+import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
@@ -87,6 +92,7 @@ export type Product = {
   sizes: string[];
   size: string;
   image: string;
+  images?: string[];
   tagline: string;
   description: string;
   notes: { tete: string[]; coeur: string[]; fond: string[] };
@@ -101,6 +107,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["70 ml"],
     size: "70 ml",
     image: baccaratAsset.url,
+    images: [baccaratAsset.url, baccaratAlt2.url, baccaratAlt1.url],
     tagline: "Extrait de parfum",
     description:
       "Une signature olfactive iconique. Un sillage lumineux et minéral, à la fois floral, ambré et boisé, qui évoque la sophistication du cristal Baccarat.",
@@ -118,6 +125,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["100 ml"],
     size: "100 ml",
     image: bleuAsset.url,
+    images: [bleuAsset.url, bleuAlt1.url],
     tagline: "Eau de Parfum",
     description:
       "Une fragrance boisée et aromatique d'une grande liberté. Une signature masculine et intemporelle, à la fois fraîche, minérale et profondément sensuelle.",
@@ -135,6 +143,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["70 ml"],
     size: "70 ml",
     image: grandSoirAsset.url,
+    images: [grandSoirAsset.url, grandSoirAlt2.url, grandSoirAlt1.url],
     tagline: "Eau de Parfum",
     description:
       "Un hymne à Paris, la nuit. Une fragrance chaleureuse, ambrée et enveloppante, où l'élégance se conjugue à la douceur sensuelle du benjoin et de la vanille.",
