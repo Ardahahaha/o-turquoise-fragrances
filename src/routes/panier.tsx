@@ -112,7 +112,7 @@ function Panier() {
           </button>
 
           <p className="mt-3 text-center text-[11px] text-muted-foreground">
-            Paiement sécurisé · Retours 14 jours
+            Paiement sécurisé
           </p>
         </aside>
       </div>
