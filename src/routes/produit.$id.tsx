@@ -9,14 +9,47 @@ export const Route = createFileRoute("/produit/$id")({
     if (!product) throw notFound();
     return { product };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.product.name} — O Turquoise` },
-          { name: "description", content: loaderData.product.description },
-        ]
-      : [],
-  }),
+  head: ({ params, loaderData }) => {
+    if (!loaderData) return { meta: [] };
+    const { product } = loaderData;
+    const url = `https://oturquoise.lovable.app/produit/${params.id}`;
+    const title = `${product.name} — ${product.brand} | O Turquoise`;
+    const description = `${product.name} (${product.size}) par ${product.brand}. ${product.description}`.slice(0, 160);
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: `${product.name} — ${product.brand}` },
+        { property: "og:description", content: product.tagline + " · " + product.size },
+        { property: "og:type", content: "product" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: product.image },
+        { name: "twitter:image", content: product.image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            brand: { "@type": "Brand", name: product.brand },
+            description: product.description,
+            image: product.images ?? [product.image],
+            sku: product.id,
+            offers: {
+              "@type": "Offer",
+              price: product.price,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url,
+            },
+          }),
+        },
+      ],
+    };
+  },
   notFoundComponent: () => (
     <div className="mx-auto max-w-md px-4 py-20 text-center">
       <h1 className="text-2xl font-semibold">Parfum introuvable</h1>
@@ -97,7 +130,7 @@ function ProductPage() {
 
           {/* Notes */}
           <div className="mt-6 rounded-xl border border-border/70 bg-secondary/40 p-4">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Notes olfactives</p>
+            <h2 className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-normal">Notes olfactives</h2>
             <div className="mt-3 space-y-2">
               <NoteRow label="Tête" items={product.notes.tete} />
               <NoteRow label="Cœur" items={product.notes.coeur} />
@@ -156,9 +189,12 @@ function ProductPage() {
           </div>
 
           {/* Shipping mini */}
-          <div className="mt-6 grid gap-2 border-t border-border/70 pt-5 text-xs sm:text-sm">
-            <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte" />
-            <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Authenticité garantie" />
+          <div className="mt-6 border-t border-border/70 pt-5">
+            <h2 className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-normal">Livraison & garanties</h2>
+            <div className="mt-3 grid gap-2 text-xs sm:text-sm">
+              <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte" />
+              <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Authenticité garantie" />
+            </div>
           </div>
         </div>
       </div>
