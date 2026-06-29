@@ -130,13 +130,21 @@ function ProductPage() {
 
             <button
               onClick={onAdd}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-opacity hover:opacity-90 sm:py-3 sm:text-sm"
+              className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-b from-[#F6E8C8] to-[#E3C68C] px-5 py-3 text-xs font-semibold text-[#2A2118] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_12px_28px_-8px_rgba(180,140,70,0.55),0_24px_48px_-16px_rgba(180,140,70,0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:from-[#FAEDCF] hover:to-[#E8CC91] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_16px_36px_-10px_rgba(180,140,70,0.65),0_32px_60px_-20px_rgba(180,140,70,0.45)] active:translate-y-0 sm:py-3.5 sm:text-sm"
             >
-              {added ? (
-                <><Check className="h-3.5 w-3.5" /> Ajouté au panier</>
-              ) : (
-                <>Ajouter au panier — {formatPrice(product.price * qty)}</>
-              )}
+              {/* Specular highlight */}
+              <span className="pointer-events-none absolute inset-x-4 top-0 h-1/2 rounded-full bg-gradient-to-b from-white/80 to-transparent opacity-90" />
+              {/* Liquid shimmer sweep */}
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/55 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
+              {/* Warm gold glow underlay */}
+              <span className="pointer-events-none absolute -inset-1 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(220,180,110,0.85),transparent_70%)] opacity-60 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="relative">
+                {added ? (
+                  <><Check className="relative h-3.5 w-3.5" /> Ajouté au panier</>
+                ) : (
+                  <>Ajouter au panier — {formatPrice(product.price * qty)}</>
+                )}
+              </span>
             </button>
 
             <Link
