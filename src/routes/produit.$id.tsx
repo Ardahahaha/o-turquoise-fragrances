@@ -94,6 +94,10 @@ function ProductPage() {
               key={gallery[activeImg]}
               src={gallery[activeImg]}
               alt={product.name}
+              width={760}
+              height={760}
+              fetchPriority="high"
+              decoding="async"
               className="mx-auto w-full max-w-md p-6 sm:p-12 animate-in fade-in duration-300"
             />
           </div>
@@ -111,7 +115,7 @@ function ProductPage() {
                       : "ring-border hover:ring-foreground/30"
                   }`}
                 >
-                  <img src={src} alt="" className="h-full w-full object-contain p-1.5" />
+                  <img src={src} alt="" loading="lazy" decoding="async" width={120} height={120} className="h-full w-full object-contain p-1.5" />
                 </button>
               ))}
             </div>

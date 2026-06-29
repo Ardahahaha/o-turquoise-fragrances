@@ -18,6 +18,9 @@ export function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={product.name}
             loading="lazy"
+            decoding="async"
+            width={600}
+            height={600}
             className="aspect-square w-full object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04] sm:p-10"
             style={{ transform: "translateZ(40px)" }}
           />
