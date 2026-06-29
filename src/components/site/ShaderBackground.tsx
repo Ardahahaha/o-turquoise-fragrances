@@ -13,12 +13,13 @@ export function ShaderBackground() {
       <MeshGradient
         style={{ width: "100%", height: "100%" }}
         colors={["#0a0a0a", "#1a1a1a", "#f5f5f5", "#2a2a2a", "#ffffff"]}
-        speed={0.35}
+        speed={0.8}
         distortion={1}
         swirl={0.85}
       />
       {/* Soft white wash to keep the site readable */}
-      <div className="absolute inset-0 bg-white/70" />
+      <div className="absolute inset-0 bg-white/80" />
+
     </div>
   );
 }
