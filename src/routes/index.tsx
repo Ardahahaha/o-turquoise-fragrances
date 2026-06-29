@@ -8,21 +8,66 @@ import { OttomanRosette } from "@/components/site/OttomanRosette";
 import { Marquee } from "@/components/site/Marquee";
 import { Parallax } from "@/components/site/Parallax";
 
+const FAQ = [
+  {
+    q: "Quels parfums propose O Turquoise ?",
+    a: "O Turquoise propose une sélection rare de parfums de luxe : Baccarat Rouge 540 de Maison Francis Kurkdjian, Bleu de Chanel et Grand Soir. Une boutique indépendante dédiée à la haute parfumerie.",
+  },
+  {
+    q: "Le parfum Baccarat Rouge 540 est-il disponible ?",
+    a: "Oui. Baccarat Rouge 540 — Maison Francis Kurkdjian est disponible en flacon 70 ml sur O Turquoise, authentique et scellé d'origine.",
+  },
+  {
+    q: "La livraison est-elle proposée en France ?",
+    a: "Oui, la livraison standard est offerte en France métropolitaine. Vos commandes sont expédiées sous 24 à 48 h ouvrées avec un suivi par email.",
+  },
+  {
+    q: "Comment commander un parfum sur O Turquoise ?",
+    a: "Sélectionnez votre parfum dans la boutique, ajoutez-le au panier puis validez la commande. L'achat se fait en quelques clics, en ligne, en toute sécurité.",
+  },
+  {
+    q: "Les parfums vendus sont-ils 100% authentiques ?",
+    a: "Tous nos parfums sont garantis 100% authentiques, neufs et scellés d'origine. O Turquoise est une boutique indépendante non affiliée officiellement aux maisons distribuées.",
+  },
+] as const;
+
 export const Route = createFileRoute("/")({
   head: () => {
     const heroImg = PRODUCTS[0]?.image;
     return {
       meta: [
-        { title: "O Turquoise — Parfums de luxe authentiques en ligne" },
-        { name: "description", content: "Boutique indépendante de parfums d'exception. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
-        { property: "og:title", content: "O Turquoise — Parfums de luxe authentiques" },
-        { property: "og:description", content: "Sélection rare de fragrances iconiques, livrées avec exigence." },
+        { title: "O Turquoise — Boutique de parfum premium en ligne" },
+        { name: "description", content: "O Turquoise, boutique indépendante de parfums de luxe en ligne. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
+        { name: "keywords", content: "O Turquoise, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Bleu de Chanel, Grand Soir" },
+        { property: "og:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
+        { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
         { property: "og:url", content: "https://oturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
+        ...(heroImg ? [
+          { property: "og:image" as const, content: heroImg },
+          { name: "twitter:image" as const, content: heroImg },
+        ] : []),
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
+        { name: "twitter:description", content: "Parfums de luxe authentiques. Livraison offerte en France." },
       ],
       links: [
         { rel: "canonical", href: "https://oturquoise.lovable.app/" },
         ...(heroImg ? [{ rel: "preload" as const, as: "image" as const, href: heroImg, fetchpriority: "high" as const }] : []),
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQ.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        },
       ],
     };
   },
@@ -103,7 +148,7 @@ function Home() {
               <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
                 <img
                   src={hero.image}
-                  alt={hero.name}
+                  alt={`Flacon ${hero.name} — ${hero.brand}, parfum de luxe disponible sur O Turquoise`}
                   width={760}
                   height={760}
                   fetchPriority="high"
@@ -189,6 +234,68 @@ function Home() {
                 </div>
               </div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* BRAND PRESENTATION — discreet SEO content */}
+      <section className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+              O Turquoise, une boutique de parfum premium en ligne
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              O Turquoise est une boutique indépendante dédiée à la haute parfumerie. Nous sélectionnons
+              quelques fragrances iconiques — comme <strong className="text-foreground">Baccarat Rouge 540</strong> de
+              Maison Francis Kurkdjian, <strong className="text-foreground">Bleu de Chanel</strong> ou{" "}
+              <strong className="text-foreground">Grand Soir</strong> — pour offrir une expérience d'achat
+              raffinée, claire et sans compromis.
+            </p>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Qualité &amp; authenticité</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Tous nos parfums sont 100% authentiques, neufs et scellés d'origine.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Livraison soignée</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Expédition sous 24–48 h, livraison offerte en France métropolitaine.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Expérience client</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Conseils personnalisés et accompagnement attentif à chaque commande.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ — SEO */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Questions fréquentes</h2>
+            <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
+              Tout ce qu'il faut savoir avant de commander un parfum sur O Turquoise.
+            </p>
+            <dl className="mt-6 divide-y divide-border/60 rounded-2xl border border-border/60 bg-white">
+              {FAQ.map((f) => (
+                <details key={f.q} className="group p-4 sm:p-5">
+                  <summary className="flex cursor-pointer items-start justify-between gap-3 text-sm font-medium text-foreground marker:hidden sm:text-base">
+                    <span>{f.q}</span>
+                    <span aria-hidden className="mt-0.5 text-turquoise transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <dd className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{f.a}</dd>
+                </details>
+              ))}
+            </dl>
           </Reveal>
         </div>
       </section>

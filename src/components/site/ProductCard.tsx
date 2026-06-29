@@ -17,7 +17,7 @@ export function ProductCard({ product }: { product: Product }) {
 
           <img
             src={product.image}
-            alt={product.name}
+            alt={`Flacon de parfum ${product.name} — ${product.brand}, disponible sur O Turquoise`}
             loading="lazy"
             decoding="async"
             width={600}
