@@ -143,6 +143,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["70 ml"],
     size: "70 ml",
     image: grandSoirAsset.url,
+    images: [grandSoirAsset.url, grandSoirAlt2.url, grandSoirAlt1.url],
     tagline: "Eau de Parfum",
     description:
       "Un hymne à Paris, la nuit. Une fragrance chaleureuse, ambrée et enveloppante, où l'élégance se conjugue à la douceur sensuelle du benjoin et de la vanille.",
