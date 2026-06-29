@@ -11,7 +11,7 @@ export function ShaderBackground() {
       className="pointer-events-none fixed inset-0 -z-20 overflow-hidden"
     >
       <MeshGradient
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%", transform: "scale(1.35)" }}
         colors={["#0a0a0a", "#1a1a1a", "#f5f5f5", "#2a2a2a", "#ffffff"]}
         speed={0.8}
         distortion={1}
