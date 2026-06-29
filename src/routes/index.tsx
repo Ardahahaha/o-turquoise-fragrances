@@ -5,6 +5,8 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
 import { SplineScene } from "@/components/site/SplineScene";
 import { OttomanRosette } from "@/components/site/OttomanRosette";
+import { Marquee } from "@/components/site/Marquee";
+import { Parallax } from "@/components/site/Parallax";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -84,7 +86,7 @@ function Home() {
           </Reveal>
 
           <Reveal delay={500}>
-            <div className="relative mx-auto mt-10 max-w-md sm:mt-14 sm:max-w-lg">
+            <Parallax amount={28} className="relative mx-auto mt-10 max-w-md sm:mt-14 sm:max-w-lg">
               {/* glow halo */}
               <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.18),transparent_60%)] blur-2xl" />
               <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
@@ -94,10 +96,27 @@ function Home() {
                   className="mx-auto w-full max-w-[260px] sm:max-w-[380px]"
                 />
               </div>
-            </div>
+            </Parallax>
           </Reveal>
         </div>
       </section>
+
+      {/* MARQUEE — notes olfactives */}
+      <Marquee
+        items={[
+          "Safran",
+          "Ambroxan",
+          "Jasmin sambac",
+          "Cèdre du Liban",
+          "Bergamote",
+          "Iris",
+          "Oud",
+          "Vétiver",
+          "Ambre gris",
+          "Néroli",
+        ]}
+      />
+
 
       {/* PRODUCT GRID */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
