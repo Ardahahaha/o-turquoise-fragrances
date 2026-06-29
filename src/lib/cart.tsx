@@ -1,7 +1,12 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import baccaratAsset from "@/assets/baccarat-rouge-540.png.asset.json";
+import baccaratAlt1 from "@/assets/baccarat-alt-1.png.asset.json";
+import baccaratAlt2 from "@/assets/baccarat-alt-2.png.asset.json";
 import bleuAsset from "@/assets/bleu-de-chanel.png.asset.json";
+import bleuAlt1 from "@/assets/bleu-de-chanel-alt-1.png.asset.json";
 import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
+import grandSoirAlt1 from "@/assets/grand-soir-alt-1.png.asset.json";
+import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
