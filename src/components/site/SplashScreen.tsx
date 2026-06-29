@@ -41,8 +41,8 @@ export function SplashScreen() {
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-        exiting ? "pointer-events-none opacity-0 scale-[1.02]" : "opacity-100 scale-100"
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        exiting ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
       <div className="flex flex-col items-center">
