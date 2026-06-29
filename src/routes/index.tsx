@@ -8,21 +8,66 @@ import { OttomanRosette } from "@/components/site/OttomanRosette";
 import { Marquee } from "@/components/site/Marquee";
 import { Parallax } from "@/components/site/Parallax";
 
+const FAQ = [
+  {
+    q: "Quels parfums propose O Turquoise ?",
+    a: "O Turquoise propose une sélection rare de parfums de luxe : Baccarat Rouge 540 de Maison Francis Kurkdjian, Bleu de Chanel et Grand Soir. Une boutique indépendante dédiée à la haute parfumerie.",
+  },
+  {
+    q: "Le parfum Baccarat Rouge 540 est-il disponible ?",
+    a: "Oui. Baccarat Rouge 540 — Maison Francis Kurkdjian est disponible en flacon 70 ml sur O Turquoise, authentique et scellé d'origine.",
+  },
+  {
+    q: "La livraison est-elle proposée en France ?",
+    a: "Oui, la livraison standard est offerte en France métropolitaine. Vos commandes sont expédiées sous 24 à 48 h ouvrées avec un suivi par email.",
+  },
+  {
+    q: "Comment commander un parfum sur O Turquoise ?",
+    a: "Sélectionnez votre parfum dans la boutique, ajoutez-le au panier puis validez la commande. L'achat se fait en quelques clics, en ligne, en toute sécurité.",
+  },
+  {
+    q: "Les parfums vendus sont-ils 100% authentiques ?",
+    a: "Tous nos parfums sont garantis 100% authentiques, neufs et scellés d'origine. O Turquoise est une boutique indépendante non affiliée officiellement aux maisons distribuées.",
+  },
+] as const;
+
 export const Route = createFileRoute("/")({
   head: () => {
     const heroImg = PRODUCTS[0]?.image;
     return {
       meta: [
-        { title: "O Turquoise — Parfums de luxe authentiques en ligne" },
-        { name: "description", content: "Boutique indépendante de parfums d'exception. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
-        { property: "og:title", content: "O Turquoise — Parfums de luxe authentiques" },
-        { property: "og:description", content: "Sélection rare de fragrances iconiques, livrées avec exigence." },
+        { title: "O Turquoise — Boutique de parfum premium en ligne" },
+        { name: "description", content: "O Turquoise, boutique indépendante de parfums de luxe en ligne. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
+        { name: "keywords", content: "O Turquoise, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Bleu de Chanel, Grand Soir" },
+        { property: "og:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
+        { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
         { property: "og:url", content: "https://oturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
+        ...(heroImg ? [
+          { property: "og:image" as const, content: heroImg },
+          { name: "twitter:image" as const, content: heroImg },
+        ] : []),
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
+        { name: "twitter:description", content: "Parfums de luxe authentiques. Livraison offerte en France." },
       ],
       links: [
         { rel: "canonical", href: "https://oturquoise.lovable.app/" },
         ...(heroImg ? [{ rel: "preload" as const, as: "image" as const, href: heroImg, fetchpriority: "high" as const }] : []),
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQ.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        },
       ],
     };
   },
