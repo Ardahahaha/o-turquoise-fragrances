@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import ogImage from "@/assets/og-image.jpg";
+import ogImage from "@/assets/og-image.png.asset.json";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -43,8 +43,8 @@ export const Route = createFileRoute("/")({
         { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
         { property: "og:url", content: "https://oturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
-        { property: "og:image" as const, content: ogImage },
-        { name: "twitter:image" as const, content: ogImage },
+        { property: "og:image" as const, content: ogImage.url },
+        { name: "twitter:image" as const, content: ogImage.url },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "O Turquoise — Boutique de parfum premium en ligne" },
         { name: "twitter:description", content: "Parfums de luxe authentiques. Livraison offerte en France." },
