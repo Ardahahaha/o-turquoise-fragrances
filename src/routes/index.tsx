@@ -9,17 +9,23 @@ import { Marquee } from "@/components/site/Marquee";
 import { Parallax } from "@/components/site/Parallax";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "O Turquoise — Parfums de luxe authentiques en ligne" },
-      { name: "description", content: "Boutique indépendante de parfums d'exception. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
-      { property: "og:title", content: "O Turquoise — Parfums de luxe authentiques" },
-      { property: "og:description", content: "Sélection rare de fragrances iconiques, livrées avec exigence." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/" },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/" }],
-  }),
+  head: () => {
+    const heroImg = PRODUCTS[0]?.image;
+    return {
+      meta: [
+        { title: "O Turquoise — Parfums de luxe authentiques en ligne" },
+        { name: "description", content: "Boutique indépendante de parfums d'exception. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
+        { property: "og:title", content: "O Turquoise — Parfums de luxe authentiques" },
+        { property: "og:description", content: "Sélection rare de fragrances iconiques, livrées avec exigence." },
+        { property: "og:url", content: "https://oturquoise.lovable.app/" },
+        { property: "og:type", content: "website" },
+      ],
+      links: [
+        { rel: "canonical", href: "https://oturquoise.lovable.app/" },
+        ...(heroImg ? [{ rel: "preload" as const, as: "image" as const, href: heroImg, fetchpriority: "high" as const }] : []),
+      ],
+    };
+  },
   component: Home,
 });
 
