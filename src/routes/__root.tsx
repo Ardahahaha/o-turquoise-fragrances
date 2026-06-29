@@ -16,6 +16,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
 import { ShaderBackground } from "@/components/site/ShaderBackground";
+import { SplashScreen } from "@/components/site/SplashScreen";
 
 function NotFoundComponent() {
   return (
