@@ -23,9 +23,8 @@ function Livraison() {
         <Card icon={<Truck className="h-4 w-4" />} title="Expédition rapide">
           Commandes préparées et expédiées sous 24 à 48 h ouvrées. Suivi par email.
         </Card>
-        <Card icon={<Package className="h-4 w-4" />} title="Livraison soignée">
-          Livraison standard <strong className="text-foreground">9,90 €</strong> en France (3 à 5 jours).{" "}
-          <strong className="text-foreground">Offerte</strong> dès 200 €.
+        <Card icon={<Package className="h-4 w-4" />} title="Livraison offerte">
+          Livraison standard <strong className="text-foreground">offerte</strong> en France métropolitaine (3 à 5 jours ouvrés).
         </Card>
         <Card icon={<ShieldCheck className="h-4 w-4" />} title="Authenticité garantie">
           Tous nos parfums sont 100% authentiques, scellés d'origine.
