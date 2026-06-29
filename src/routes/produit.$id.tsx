@@ -115,7 +115,7 @@ function ProductPage() {
                       : "ring-border hover:ring-foreground/30"
                   }`}
                 >
-                  <img src={src} alt="" className="h-full w-full object-contain p-1.5" />
+                  <img src={src} alt="" loading="lazy" decoding="async" width={120} height={120} className="h-full w-full object-contain p-1.5" />
                 </button>
               ))}
             </div>
