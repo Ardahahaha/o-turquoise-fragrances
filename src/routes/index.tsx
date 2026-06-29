@@ -40,6 +40,9 @@ function Home() {
             </div>
           </Reveal>
           <Reveal>
+            <div className="mb-2 flex justify-center sm:mb-3">
+              <OttomanRosette className="h-8 w-8 text-turquoise/25 sm:h-10 sm:w-10" />
+            </div>
             <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Maison indépendante</p>
           </Reveal>
 
