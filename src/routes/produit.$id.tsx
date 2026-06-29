@@ -94,6 +94,10 @@ function ProductPage() {
               key={gallery[activeImg]}
               src={gallery[activeImg]}
               alt={product.name}
+              width={760}
+              height={760}
+              fetchPriority="high"
+              decoding="async"
               className="mx-auto w-full max-w-md p-6 sm:p-12 animate-in fade-in duration-300"
             />
           </div>
