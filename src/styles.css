@@ -220,3 +220,28 @@
   .orb, .particles span { animation: none !important; }
 }
 
+/* ───────────────────────── Splash screen intro ───────────────────────── */
+@keyframes splash-drop {
+  0%   { opacity: 0; transform: scale(0.6) translateY(12px); }
+  60%  { opacity: 1; transform: scale(1.06) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes splash-text {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes splash-line {
+  0%   { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+@utility animate-splash-drop { animation: splash-drop 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility animate-splash-text { animation: splash-text 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+@utility animate-splash-line { animation: splash-line 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-splash-drop,
+  .animate-splash-text,
+  .animate-splash-line { animation: none !important; }
+}
+
+
