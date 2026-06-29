@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Truck, ShieldCheck, Sparkles } from "lucide-react";
+import { Truck, ShieldCheck, Gift } from "lucide-react";
 import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
@@ -181,7 +181,7 @@ function Home() {
               </div>
               <div className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] ring-1 ring-black/[0.03]">
                 <span className="inline-flex rounded-full bg-turquoise/10 p-1.5 text-turquoise">
-                  <Sparkles className="h-4 w-4" />
+                  <Gift className="h-4 w-4" />
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Livraison offerte</p>
