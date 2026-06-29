@@ -104,6 +104,10 @@ function Home() {
                 <img
                   src={hero.image}
                   alt={hero.name}
+                  width={760}
+                  height={760}
+                  fetchPriority="high"
+                  decoding="async"
                   className="mx-auto w-full max-w-[260px] sm:max-w-[380px]"
                 />
               </div>
