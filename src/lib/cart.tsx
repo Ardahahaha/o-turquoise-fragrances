@@ -125,6 +125,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["100 ml"],
     size: "100 ml",
     image: bleuAsset.url,
+    images: [bleuAsset.url, bleuAlt1.url],
     tagline: "Eau de Parfum",
     description:
       "Une fragrance boisée et aromatique d'une grande liberté. Une signature masculine et intemporelle, à la fois fraîche, minérale et profondément sensuelle.",
