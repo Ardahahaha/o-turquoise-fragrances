@@ -93,7 +93,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "O Turquoise",
           url: "https://oturquoise.lovable.app",
-          description: "Boutique indépendante en ligne de parfums de luxe.",
+          description:
+            "O Turquoise — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: "contact@oturquoise.com",
+            contactType: "customer support",
+            areaServed: "FR",
+            availableLanguage: ["French"],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "O Turquoise",
+          url: "https://oturquoise.lovable.app",
+          inLanguage: "fr-FR",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://oturquoise.lovable.app/boutique?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
         }),
       },
     ],
