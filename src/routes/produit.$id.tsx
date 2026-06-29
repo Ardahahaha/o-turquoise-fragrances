@@ -54,13 +54,35 @@ function ProductPage() {
       </nav>
 
       <div className="grid gap-6 md:grid-cols-2 md:gap-12">
-        {/* Image */}
-        <div className="rounded-2xl bg-card ring-1 ring-border">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="mx-auto w-full max-w-md p-6 sm:p-12"
-          />
+        {/* Gallery */}
+        <div>
+          <div className="rounded-2xl bg-card ring-1 ring-border">
+            <img
+              key={gallery[activeImg]}
+              src={gallery[activeImg]}
+              alt={product.name}
+              className="mx-auto w-full max-w-md p-6 sm:p-12 animate-in fade-in duration-300"
+            />
+          </div>
+          {gallery.length > 1 && (
+            <div className="mt-3 flex gap-2 sm:mt-4 sm:gap-3">
+              {gallery.map((src, i) => (
+                <button
+                  key={src}
+                  onClick={() => setActiveImg(i)}
+                  data-no-shadow
+                  aria-label={`Voir l'image ${i + 1}`}
+                  className={`relative aspect-square w-16 overflow-hidden rounded-lg bg-card ring-1 transition-all sm:w-20 ${
+                    activeImg === i
+                      ? "ring-2 ring-turquoise"
+                      : "ring-border hover:ring-foreground/30"
+                  }`}
+                >
+                  <img src={src} alt="" className="h-full w-full object-contain p-1.5" />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Info */}
