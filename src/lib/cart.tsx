@@ -92,6 +92,7 @@ export type Product = {
   sizes: string[];
   size: string;
   image: string;
+  images?: string[];
   tagline: string;
   description: string;
   notes: { tete: string[]; coeur: string[]; fond: string[] };
