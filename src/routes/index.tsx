@@ -237,6 +237,68 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* BRAND PRESENTATION — discreet SEO content */}
+      <section className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+              O Turquoise, une boutique de parfum premium en ligne
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              O Turquoise est une boutique indépendante dédiée à la haute parfumerie. Nous sélectionnons
+              quelques fragrances iconiques — comme <strong className="text-foreground">Baccarat Rouge 540</strong> de
+              Maison Francis Kurkdjian, <strong className="text-foreground">Bleu de Chanel</strong> ou{" "}
+              <strong className="text-foreground">Grand Soir</strong> — pour offrir une expérience d'achat
+              raffinée, claire et sans compromis.
+            </p>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Qualité &amp; authenticité</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Tous nos parfums sont 100% authentiques, neufs et scellés d'origine.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Livraison soignée</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Expédition sous 24–48 h, livraison offerte en France métropolitaine.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-foreground">Expérience client</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  Conseils personnalisés et accompagnement attentif à chaque commande.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ — SEO */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Questions fréquentes</h2>
+            <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
+              Tout ce qu'il faut savoir avant de commander un parfum sur O Turquoise.
+            </p>
+            <dl className="mt-6 divide-y divide-border/60 rounded-2xl border border-border/60 bg-white">
+              {FAQ.map((f) => (
+                <details key={f.q} className="group p-4 sm:p-5">
+                  <summary className="flex cursor-pointer items-start justify-between gap-3 text-sm font-medium text-foreground marker:hidden sm:text-base">
+                    <span>{f.q}</span>
+                    <span aria-hidden className="mt-0.5 text-turquoise transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <dd className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{f.a}</dd>
+                </details>
+              ))}
+            </dl>
+          </Reveal>
+        </div>
+      </section>
     </div>
   );
 }
