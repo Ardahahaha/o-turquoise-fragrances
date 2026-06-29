@@ -197,7 +197,7 @@ function ProductPage() {
             <h2 className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-normal">Livraison & garanties</h2>
             <div className="mt-3 grid gap-2 text-xs sm:text-sm">
               <Mini icon={<Truck className="h-3.5 w-3.5" />} text="Livraison offerte" />
-              <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Authenticité garantie" />
+              <Mini icon={<ShieldCheck className="h-3.5 w-3.5" />} text="Parfum authentique officiel, neuf et scellé" />
             </div>
           </div>
         </div>
