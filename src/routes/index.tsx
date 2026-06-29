@@ -26,8 +26,8 @@ const FAQ = [
     a: "Sélectionnez votre parfum dans la boutique, ajoutez-le au panier puis validez la commande. L'achat se fait en quelques clics, en ligne, en toute sécurité.",
   },
   {
-    q: "Les parfums vendus sont-ils 100% authentiques ?",
-    a: "Tous nos parfums sont garantis 100% authentiques, neufs et scellés d'origine. O Turquoise est une boutique indépendante non affiliée officiellement aux maisons distribuées.",
+    q: "Les parfums vendus sont-ils 100% authentiques et officiels ?",
+    a: "Tous nos parfums sont garantis 100% authentiques, neufs et scellés d'origine, issus du circuit de distribution officiel des maisons. O Turquoise est une boutique indépendante non affiliée officiellement aux marques distribuées.",
   },
 ] as const;
 
@@ -183,6 +183,10 @@ function Home() {
         <Reveal>
           <div className="mb-6 flex items-end justify-between sm:mb-10">
             <div>
+              <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-turquoise/20 bg-turquoise/5 px-2.5 py-1">
+                <ShieldCheck className="h-3 w-3 text-turquoise" />
+                <span className="text-[10px] font-medium uppercase tracking-wider text-turquoise">Authentiques officiels</span>
+              </div>
               <h2 className="text-xl font-semibold tracking-tight sm:text-3xl">Nos parfums</h2>
               <p className="mt-1 text-xs text-muted-foreground sm:text-sm">Trois signatures, trois univers.</p>
             </div>
@@ -220,8 +224,8 @@ function Home() {
                   <ShieldCheck className="h-4 w-4" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Authenticité garantie</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">Flacons originaux scellés.</p>
+                  <p className="text-sm font-semibold text-foreground">Parfums authentiques officiels</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Flacons neufs, scellés et issus du circuit de distribution officiel.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] ring-1 ring-black/[0.03]">
@@ -255,9 +259,9 @@ function Home() {
 
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               <div>
-                <h3 className="text-sm font-semibold text-foreground">Qualité &amp; authenticité</h3>
+                <h3 className="text-sm font-semibold text-foreground">Produits authentiques officiels</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                  Tous nos parfums sont 100% authentiques, neufs et scellés d'origine.
+                  Tous nos parfums sont 100% authentiques, neufs, scellés et issus du circuit de distribution officiel des maisons.
                 </p>
               </div>
               <div>
