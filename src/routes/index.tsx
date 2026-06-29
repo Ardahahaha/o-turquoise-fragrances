@@ -148,7 +148,7 @@ function Home() {
               <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
                 <img
                   src={hero.image}
-                  alt={hero.name}
+                  alt={`Flacon ${hero.name} — ${hero.brand}, parfum de luxe disponible sur O Turquoise`}
                   width={760}
                   height={760}
                   fetchPriority="high"
