@@ -70,36 +70,36 @@ const DEFAULT_CARDS: DisplayCardProps[] = [
 export function DisplayCards({ cards }: { cards?: DisplayCardProps[] }) {
   const list = cards ?? DEFAULT_CARDS;
 
+  // Render reverse so the first card in the array is visually on top.
+  const ordered = [...list].reverse();
+
   const positions = [
     {
-      // Front card — slightly tilted, fully visible
-      zIndex: 30,
+      // Back card — highest, visible title, slight left tilt
+      z: "z-10",
+      transform: "translateY(-78px) translateX(-22px) rotate(7deg)",
+    },
+    {
+      // Middle card — higher and right, opposite rotation
+      z: "z-20",
+      transform: "translateY(-40px) translateX(20px) rotate(2deg)",
+    },
+    {
+      // Front card — centered, well readable, slight negative tilt
+      z: "z-30",
       transform: "translateY(0) translateX(0) rotate(-4deg)",
-    },
-    {
-      // Middle card — higher and to the left, opposite rotation
-      zIndex: 20,
-      transform: "translateY(-42px) translateX(-26px) rotate(2deg)",
-    },
-    {
-      // Back card — highest, furthest left, more visible
-      zIndex: 10,
-      transform: "translateY(-80px) translateX(-48px) rotate(7deg)",
     },
   ];
 
   return (
     <div className="relative mx-auto flex h-[260px] w-full max-w-md items-end justify-center sm:h-[300px]">
-      {list.map((cardProps, index) => {
+      {ordered.map((cardProps, index) => {
         const pos = positions[index] ?? positions[0];
         return (
           <div
             key={index}
-            className="absolute bottom-0 transition-transform duration-700 ease-out"
-            style={{
-              zIndex: pos.zIndex,
-              transform: pos.transform,
-            }}
+            className={cn("absolute bottom-0 transition-transform duration-700 ease-out", pos.z)}
+            style={{ transform: pos.transform }}
           >
             <DisplayCard {...cardProps} />
           </div>
