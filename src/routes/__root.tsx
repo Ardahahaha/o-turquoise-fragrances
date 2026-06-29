@@ -129,6 +129,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
+        <SplashScreen />
         <ShaderBackground />
         <AmbientBackground />
         <div className="relative flex min-h-screen flex-col">
