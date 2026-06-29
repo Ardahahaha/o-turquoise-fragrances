@@ -31,6 +31,8 @@ function ProductPage() {
   const { add } = useCart();
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const gallery = product.images && product.images.length > 0 ? product.images : [product.image];
+  const [activeImg, setActiveImg] = useState(0);
 
   const onAdd = () => {
     add(
