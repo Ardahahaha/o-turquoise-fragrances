@@ -77,7 +77,7 @@ export function ShaderBackground() {
       )}
       {/* Soft white wash to keep the site readable. Slightly stronger on
           mobile to guarantee contrast on smaller text. */}
-      <div className="absolute inset-0 bg-white/90 md:bg-white/90" />
+      <div className="absolute inset-0 bg-white/87 md:bg-white/87" />
     </div>
   );
 }
