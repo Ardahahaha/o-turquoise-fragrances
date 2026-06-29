@@ -107,6 +107,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["70 ml"],
     size: "70 ml",
     image: baccaratAsset.url,
+    images: [baccaratAsset.url, baccaratAlt2.url, baccaratAlt1.url],
     tagline: "Extrait de parfum",
     description:
       "Une signature olfactive iconique. Un sillage lumineux et minéral, à la fois floral, ambré et boisé, qui évoque la sophistication du cristal Baccarat.",
