@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PanierRouteImport } from './routes/panier'
 import { Route as LivraisonRouteImport } from './routes/livraison'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -17,6 +18,11 @@ import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProduitIdRouteImport } from './routes/produit.$id'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PanierRoute = PanierRouteImport.update({
   id: '/panier',
   path: '/panier',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/livraison'
     | '/panier'
+    | '/sitemap.xml'
     | '/produit/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/livraison'
     | '/panier'
+    | '/sitemap.xml'
     | '/produit/$id'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/livraison'
     | '/panier'
+    | '/sitemap.xml'
     | '/produit/$id'
   fileRoutesById: FileRoutesById
 }
@@ -118,11 +130,19 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   LivraisonRoute: typeof LivraisonRoute
   PanierRoute: typeof PanierRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProduitIdRoute: typeof ProduitIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/panier': {
       id: '/panier'
       path: '/panier'
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LivraisonRoute: LivraisonRoute,
   PanierRoute: PanierRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProduitIdRoute: ProduitIdRoute,
 }
 export const routeTree = rootRouteImport

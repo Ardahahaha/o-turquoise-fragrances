@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oturquoise.lovable.app/sitemap.xml

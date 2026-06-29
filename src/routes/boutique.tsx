@@ -5,9 +5,14 @@ import { ProductCard } from "@/components/site/ProductCard";
 export const Route = createFileRoute("/boutique")({
   head: () => ({
     meta: [
-      { title: "Boutique — O Turquoise" },
-      { name: "description", content: "Découvrez notre sélection de parfums d'exception." },
+      { title: "Boutique parfums de luxe — O Turquoise" },
+      { name: "description", content: "Explorez notre sélection rigoureuse de parfums iconiques : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie." },
+      { property: "og:title", content: "Boutique — O Turquoise" },
+      { property: "og:description", content: "Sélection rigoureuse de parfums iconiques 100% authentiques." },
+      { property: "og:url", content: "https://oturquoise.lovable.app/boutique" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/boutique" }],
   }),
   component: Boutique,
 });

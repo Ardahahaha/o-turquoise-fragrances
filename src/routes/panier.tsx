@@ -3,7 +3,14 @@ import { Minus, Plus, Trash2, ShoppingBag, Lock } from "lucide-react";
 import { useCart, formatPrice } from "@/lib/cart";
 
 export const Route = createFileRoute("/panier")({
-  head: () => ({ meta: [{ title: "Panier — O Turquoise" }] }),
+  head: () => ({
+    meta: [
+      { title: "Votre panier — O Turquoise" },
+      { name: "description", content: "Récapitulatif de votre commande de parfums chez O Turquoise. Paiement sécurisé et livraison offerte en France." },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/panier" }],
+  }),
   component: Panier,
 });
 
