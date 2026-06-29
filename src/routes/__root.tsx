@@ -15,6 +15,7 @@ import { CartProvider } from "@/lib/cart";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { AmbientBackground } from "@/components/site/AmbientBackground";
+import { ShaderBackground } from "@/components/site/ShaderBackground";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +128,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
+        <ShaderBackground />
         <AmbientBackground />
         <div className="relative flex min-h-screen flex-col">
           <Header />
