@@ -61,16 +61,11 @@ export const Route = createFileRoute("/produit/$id")({
               },
               hasMerchantReturnPolicy: {
                 "@type": "MerchantReturnPolicy",
-                returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
                 returnMethod: "https://schema.org/ReturnByMail",
                 returnFees: "https://schema.org/FreeReturn",
+                merchantReturnDays: 14,
               },
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5",
-              bestRating: "5",
-              reviewCount: "1",
             },
           }),
         },
