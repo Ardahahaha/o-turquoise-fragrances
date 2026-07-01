@@ -120,7 +120,7 @@ function ProductPage() {
             <img
               key={gallery[activeImg]}
               src={gallery[activeImg]}
-              alt={product.name}
+              alt={`Flacon ${product.name} ${product.tagline} ${product.size} — ${product.brand}, parfum authentique disponible chez EAU TURQUOISE`}
               width={760}
               height={760}
               fetchPriority="high"
