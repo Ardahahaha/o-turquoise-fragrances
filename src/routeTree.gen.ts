@@ -17,6 +17,7 @@ import { Route as BoutiqueRouteImport } from './routes/boutique'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProduitIdRouteImport } from './routes/produit.$id'
+import { Route as GuidesMeilleursParfumsOccasionsRouteImport } from './routes/guides.meilleurs-parfums-occasions'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -58,6 +59,12 @@ const ProduitIdRoute = ProduitIdRouteImport.update({
   path: '/produit/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesMeilleursParfumsOccasionsRoute =
+  GuidesMeilleursParfumsOccasionsRouteImport.update({
+    id: '/guides/meilleurs-parfums-occasions',
+    path: '/guides/meilleurs-parfums-occasions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/meilleurs-parfums-occasions': typeof GuidesMeilleursParfumsOccasionsRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +85,7 @@ export interface FileRoutesByTo {
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/meilleurs-parfums-occasions': typeof GuidesMeilleursParfumsOccasionsRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesById {
@@ -88,6 +97,7 @@ export interface FileRoutesById {
   '/livraison': typeof LivraisonRoute
   '/panier': typeof PanierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/guides/meilleurs-parfums-occasions': typeof GuidesMeilleursParfumsOccasionsRoute
   '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/livraison'
     | '/panier'
     | '/sitemap.xml'
+    | '/guides/meilleurs-parfums-occasions'
     | '/produit/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +121,7 @@ export interface FileRouteTypes {
     | '/livraison'
     | '/panier'
     | '/sitemap.xml'
+    | '/guides/meilleurs-parfums-occasions'
     | '/produit/$id'
   id:
     | '__root__'
@@ -120,6 +132,7 @@ export interface FileRouteTypes {
     | '/livraison'
     | '/panier'
     | '/sitemap.xml'
+    | '/guides/meilleurs-parfums-occasions'
     | '/produit/$id'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +144,7 @@ export interface RootRouteChildren {
   LivraisonRoute: typeof LivraisonRoute
   PanierRoute: typeof PanierRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  GuidesMeilleursParfumsOccasionsRoute: typeof GuidesMeilleursParfumsOccasionsRoute
   ProduitIdRoute: typeof ProduitIdRoute
 }
 
@@ -192,6 +206,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProduitIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/meilleurs-parfums-occasions': {
+      id: '/guides/meilleurs-parfums-occasions'
+      path: '/guides/meilleurs-parfums-occasions'
+      fullPath: '/guides/meilleurs-parfums-occasions'
+      preLoaderRoute: typeof GuidesMeilleursParfumsOccasionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   LivraisonRoute: LivraisonRoute,
   PanierRoute: PanierRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  GuidesMeilleursParfumsOccasionsRoute: GuidesMeilleursParfumsOccasionsRoute,
   ProduitIdRoute: ProduitIdRoute,
 }
 export const routeTree = rootRouteImport
