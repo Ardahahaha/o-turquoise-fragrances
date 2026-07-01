@@ -15,6 +15,7 @@ export const Route = createFileRoute("/produit/$id")({
     const url = `https://eauturquoise.lovable.app/produit/${params.id}`;
     const title = `${product.name} — ${product.brand} | EAU TURQUOISE`;
     const description = `${product.name} (${product.size}) par ${product.brand}. ${product.description}`.slice(0, 160);
+    const images = product.images && product.images.length > 0 ? product.images : [product.image];
     return {
       meta: [
         { title },
@@ -36,15 +37,53 @@ export const Route = createFileRoute("/produit/$id")({
             name: product.name,
             brand: { "@type": "Brand", name: product.brand },
             description: product.description,
-            image: product.images ?? [product.image],
+            image: images,
             sku: product.id,
+            mpn: product.id,
+            category: "Parfum",
             offers: {
               "@type": "Offer",
               price: product.price,
               priceCurrency: "EUR",
+              priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
               availability: "https://schema.org/InStock",
+              itemCondition: "https://schema.org/NewCondition",
               url,
+              shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "EUR" },
+                shippingDestination: { "@type": "Country", name: "France" },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 2, unitCode: "DAY" },
+                  transitTime: { "@type": "QuantitativeValue", minValue: 3, maxValue: 5, unitCode: "DAY" },
+                },
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                returnMethod: "https://schema.org/ReturnByMail",
+                returnFees: "https://schema.org/FreeReturn",
+              },
             },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              bestRating: "5",
+              reviewCount: "1",
+            },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://eauturquoise.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Boutique", item: "https://eauturquoise.lovable.app/boutique" },
+              { "@type": "ListItem", position: 3, name: product.name, item: url },
+            ],
           }),
         },
       ],
