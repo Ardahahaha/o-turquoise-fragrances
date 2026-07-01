@@ -13,6 +13,27 @@ export const Route = createFileRoute("/boutique")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/boutique" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Boutique parfums de luxe — EAU TURQUOISE",
+          url: "https://eauturquoise.lovable.app/boutique",
+          description: "Sélection rigoureuse de parfums iconiques 100% authentiques.",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: PRODUCTS.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://eauturquoise.lovable.app/produit/${p.id}`,
+              name: p.name,
+            })),
+          },
+        }),
+      },
+    ],
   }),
   component: Boutique,
 });
