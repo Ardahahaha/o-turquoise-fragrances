@@ -59,13 +59,6 @@ export const Route = createFileRoute("/produit/$id")({
                   transitTime: { "@type": "QuantitativeValue", minValue: 3, maxValue: 5, unitCode: "DAY" },
                 },
               },
-              hasMerchantReturnPolicy: {
-                "@type": "MerchantReturnPolicy",
-                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                returnMethod: "https://schema.org/ReturnByMail",
-                returnFees: "https://schema.org/FreeReturn",
-                merchantReturnDays: 14,
-              },
             },
           }),
         },
