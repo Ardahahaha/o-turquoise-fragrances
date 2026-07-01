@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
     return {
       meta: [
         { title: "EAU TURQUOISE — Boutique de parfum premium en ligne" },
-        { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe. Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France." },
+        { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Livraison offerte en France." },
         { name: "keywords", content: "EAU TURQUOISE, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Bleu de Chanel, Grand Soir" },
         { property: "og:title", content: "EAU TURQUOISE — Boutique de parfum premium en ligne" },
         { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
