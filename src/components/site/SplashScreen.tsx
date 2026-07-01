@@ -54,7 +54,7 @@ export function SplashScreen() {
         </div>
 
         <h1 className="animate-splash-text text-[1.85rem] font-light tracking-[-0.05em] text-foreground">
-          O Turquoise
+          EAU TURQUOISE
         </h1>
 
         <p className="animate-splash-text mt-1.5 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">

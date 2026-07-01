@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "O Turquoise — Parfums d'exception" },
-      { name: "description", content: "O Turquoise, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
+      { title: "EAU TURQUOISE — Parfums d'exception" },
+      { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "O Turquoise" },
+      { property: "og:site_name", content: "EAU TURQUOISE" },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -91,10 +91,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "O Turquoise",
+          name: "EAU TURQUOISE",
           url: "https://oturquoise.lovable.app",
           description:
-            "O Turquoise — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
+            "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
           contactPoint: {
             "@type": "ContactPoint",
             email: "contact@oturquoise.com",
@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "O Turquoise",
+          name: "EAU TURQUOISE",
           url: "https://oturquoise.lovable.app",
           inLanguage: "fr-FR",
           potentialAction: {

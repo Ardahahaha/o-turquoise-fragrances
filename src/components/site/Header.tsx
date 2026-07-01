@@ -23,7 +23,7 @@ export function Header() {
             <path d="M12 0 C12 10 24 16 24 22 C24 28 19 32 12 32 C5 32 0 28 0 22 C0 16 12 10 12 0 Z" />
           </svg>
           <span className="text-[15px] font-semibold tracking-tight text-foreground sm:text-base">
-            O Turquoise
+            EAU TURQUOISE
           </span>
         </Link>
 
