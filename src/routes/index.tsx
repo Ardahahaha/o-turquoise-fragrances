@@ -88,7 +88,7 @@ function Home() {
                 zoom={0.3}
               />
               {/* Texte EAU TURQUOISE par-dessus l'animation */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center sm:bottom-10">
+              <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center sm:bottom-7">
                 <span className="text-2xl font-semibold tracking-[-0.04em] text-foreground/60 sm:text-3xl">
                   EAU TURQUOISE
                 </span>
