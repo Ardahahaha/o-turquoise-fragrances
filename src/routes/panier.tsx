@@ -53,7 +53,7 @@ function Panier() {
               className="grid grid-cols-[64px_minmax(0,1fr)] gap-3 rounded-xl border border-border/70 bg-background p-3 sm:grid-cols-[88px_minmax(0,1fr)_auto] sm:items-center sm:gap-5 sm:p-4"
             >
               <div className="rounded-lg bg-secondary p-1.5 sm:p-2">
-                <img src={item.image} alt={item.name} className="aspect-square w-full object-contain" />
+                <img src={item.image} alt={`${item.name} ${item.size} — ${item.brand}`} className="aspect-square w-full object-contain" />
               </div>
 
               <div className="min-w-0">
