@@ -9,7 +9,7 @@ export const Route = createFileRoute("/panier")({
       { name: "description", content: "Récapitulatif de votre commande de parfums chez EAU TURQUOISE. Paiement sécurisé et livraison offerte en France." },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/panier" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/panier" }],
   }),
   component: Panier,
 });

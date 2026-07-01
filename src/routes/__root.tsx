@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "EAU TURQUOISE",
-          url: "https://oturquoise.lovable.app",
+          url: "https://eauturquoise.lovable.app",
           description:
             "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
           contactPoint: {
@@ -110,11 +110,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "EAU TURQUOISE",
-          url: "https://oturquoise.lovable.app",
+          url: "https://eauturquoise.lovable.app",
           inLanguage: "fr-FR",
           potentialAction: {
             "@type": "SearchAction",
-            target: "https://oturquoise.lovable.app/boutique?q={search_term_string}",
+            target: "https://eauturquoise.lovable.app/boutique?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         }),

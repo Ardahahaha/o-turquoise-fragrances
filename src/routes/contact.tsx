@@ -9,10 +9,10 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Une question sur nos parfums ou votre commande ? Contactez l'équipe EAU TURQUOISE par email, téléphone ou via notre formulaire." },
       { property: "og:title", content: "Contact — EAU TURQUOISE" },
       { property: "og:description", content: "Notre équipe est à votre écoute pour tout conseil parfumerie." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/contact" },
+      { property: "og:url", content: "https://eauturquoise.lovable.app/contact" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/contact" }],
   }),
   component: Contact,
 });

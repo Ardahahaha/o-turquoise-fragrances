@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
         { name: "keywords", content: "EAU TURQUOISE, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Bleu de Chanel, Grand Soir" },
         { property: "og:title", content: "EAU TURQUOISE — Boutique de parfum premium en ligne" },
         { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
-        { property: "og:url", content: "https://oturquoise.lovable.app/" },
+        { property: "og:url", content: "https://eauturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
         { property: "og:image" as const, content: ogImage.url },
         { name: "twitter:image" as const, content: ogImage.url },
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
         { name: "twitter:description", content: "Parfums de luxe authentiques. Livraison offerte en France." },
       ],
       links: [
-        { rel: "canonical", href: "https://oturquoise.lovable.app/" },
+        { rel: "canonical", href: "https://eauturquoise.lovable.app/" },
         ...(heroImg ? [{ rel: "preload" as const, as: "image" as const, href: heroImg, fetchpriority: "high" as const }] : []),
       ],
       scripts: [

@@ -8,10 +8,10 @@ export const Route = createFileRoute("/livraison")({
       { name: "description", content: "Expédition sous 24 à 48 h ouvrées, livraison standard offerte en France métropolitaine (3 à 5 jours). Authenticité garantie." },
       { property: "og:title", content: "Livraison — EAU TURQUOISE" },
       { property: "og:description", content: "Livraison offerte en France métropolitaine, expédition rapide et suivie." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/livraison" },
+      { property: "og:url", content: "https://eauturquoise.lovable.app/livraison" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/livraison" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/livraison" }],
   }),
   component: Livraison,
 });
