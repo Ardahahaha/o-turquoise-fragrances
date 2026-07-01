@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <p className="text-sm font-semibold tracking-tight text-foreground">O Turquoise</p>
+            <p className="text-sm font-semibold tracking-tight text-foreground">EAU TURQUOISE</p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
               Boutique indépendante de parfums d'exception.
             </p>
@@ -39,10 +39,10 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border/70 pt-5">
           <p className="text-[11px] leading-relaxed text-muted-foreground">
-            O Turquoise est une boutique indépendante et n'est pas affiliée officiellement à Maison Francis Kurkdjian ni à Chanel. Toutes les marques citées appartiennent à leurs propriétaires respectifs.
+            EAU TURQUOISE est une boutique indépendante et n'est pas affiliée officiellement à Maison Francis Kurkdjian ni à Chanel. Toutes les marques citées appartiennent à leurs propriétaires respectifs.
           </p>
           <p className="mt-2 text-[11px] text-muted-foreground">
-            © {new Date().getFullYear()} O Turquoise. Tous droits réservés.
+            © {new Date().getFullYear()} EAU TURQUOISE. Tous droits réservés.
           </p>
         </div>
       </div>

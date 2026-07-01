@@ -5,8 +5,8 @@ import { useCart, formatPrice } from "@/lib/cart";
 export const Route = createFileRoute("/panier")({
   head: () => ({
     meta: [
-      { title: "Votre panier — O Turquoise" },
-      { name: "description", content: "Récapitulatif de votre commande de parfums chez O Turquoise. Paiement sécurisé et livraison offerte en France." },
+      { title: "Votre panier — EAU TURQUOISE" },
+      { name: "description", content: "Récapitulatif de votre commande de parfums chez EAU TURQUOISE. Paiement sécurisé et livraison offerte en France." },
       { name: "robots", content: "noindex" },
     ],
     links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/panier" }],

@@ -5,9 +5,9 @@ import { Mail, MapPin, Phone, Send, Check } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Conseils parfumerie O Turquoise" },
-      { name: "description", content: "Une question sur nos parfums ou votre commande ? Contactez l'équipe O Turquoise par email, téléphone ou via notre formulaire." },
-      { property: "og:title", content: "Contact — O Turquoise" },
+      { title: "Contact — Conseils parfumerie EAU TURQUOISE" },
+      { name: "description", content: "Une question sur nos parfums ou votre commande ? Contactez l'équipe EAU TURQUOISE par email, téléphone ou via notre formulaire." },
+      { property: "og:title", content: "Contact — EAU TURQUOISE" },
       { property: "og:description", content: "Notre équipe est à votre écoute pour tout conseil parfumerie." },
       { property: "og:url", content: "https://oturquoise.lovable.app/contact" },
       { property: "og:type", content: "website" },

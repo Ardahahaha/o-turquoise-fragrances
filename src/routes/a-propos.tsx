@@ -4,9 +4,9 @@ import { Sparkles, Heart, Award } from "lucide-react";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos — La maison O Turquoise" },
-      { name: "description", content: "L'histoire et les valeurs d'O Turquoise, boutique indépendante dédiée à la haute parfumerie et aux fragrances iconiques." },
-      { property: "og:title", content: "À propos — O Turquoise" },
+      { title: "À propos — La maison EAU TURQUOISE" },
+      { name: "description", content: "L'histoire et les valeurs d'EAU TURQUOISE, boutique indépendante dédiée à la haute parfumerie et aux fragrances iconiques." },
+      { property: "og:title", content: "À propos — EAU TURQUOISE" },
       { property: "og:description", content: "L'art du parfum, en toute simplicité. Découvrez notre maison indépendante." },
       { property: "og:url", content: "https://oturquoise.lovable.app/a-propos" },
       { property: "og:type", content: "website" },
@@ -26,7 +26,7 @@ function About() {
             L'art du parfum, en toute simplicité.
           </h1>
           <p className="mt-3 text-balance text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
-            O Turquoise est une boutique indépendante dédiée à la haute parfumerie. Un parfum est bien plus qu'une fragrance : c'est une signature, un souvenir, une émotion.
+            EAU TURQUOISE est une boutique indépendante dédiée à la haute parfumerie. Un parfum est bien plus qu'une fragrance : c'est une signature, un souvenir, une émotion.
           </p>
         </div>
       </section>
