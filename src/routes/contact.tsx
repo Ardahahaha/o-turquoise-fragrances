@@ -9,10 +9,37 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Une question sur nos parfums ou votre commande ? Contactez l'équipe EAU TURQUOISE par email, téléphone ou via notre formulaire." },
       { property: "og:title", content: "Contact — EAU TURQUOISE" },
       { property: "og:description", content: "Notre équipe est à votre écoute pour tout conseil parfumerie." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/contact" },
+      { property: "og:url", content: "https://eauturquoise.lovable.app/contact" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact — EAU TURQUOISE",
+          url: "https://eauturquoise.lovable.app/contact",
+          description: "Contactez EAU TURQUOISE pour un conseil parfumerie ou une question sur votre commande.",
+          mainEntity: {
+            "@type": "Organization",
+            name: "EAU TURQUOISE",
+            email: "contact@eauturquoise.com",
+            telephone: "+33 1 23 45 67 89",
+            address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "contact@eauturquoise.com",
+              telephone: "+33 1 23 45 67 89",
+              contactType: "customer support",
+              areaServed: "FR",
+              availableLanguage: ["French"],
+            },
+          },
+        }),
+      },
+    ],
   }),
   component: Contact,
 });
@@ -31,7 +58,7 @@ function Contact() {
 
       <div className="mt-8 grid gap-6 md:grid-cols-[1fr_1.4fr] md:gap-10">
         <div className="space-y-3">
-          <Info icon={<Mail className="h-3.5 w-3.5" />} title="Email">contact@oturquoise.com</Info>
+          <Info icon={<Mail className="h-3.5 w-3.5" />} title="Email">contact@eauturquoise.com</Info>
           <Info icon={<Phone className="h-3.5 w-3.5" />} title="Téléphone">+33 1 23 45 67 89</Info>
           <Info icon={<MapPin className="h-3.5 w-3.5" />} title="Adresse">Paris, France</Info>
         </div>

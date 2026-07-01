@@ -8,10 +8,10 @@ export const Route = createFileRoute("/a-propos")({
       { name: "description", content: "L'histoire et les valeurs d'EAU TURQUOISE, boutique indépendante dédiée à la haute parfumerie et aux fragrances iconiques." },
       { property: "og:title", content: "À propos — EAU TURQUOISE" },
       { property: "og:description", content: "L'art du parfum, en toute simplicité. Découvrez notre maison indépendante." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/a-propos" },
+      { property: "og:url", content: "https://eauturquoise.lovable.app/a-propos" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/a-propos" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/a-propos" }],
   }),
   component: About,
 });

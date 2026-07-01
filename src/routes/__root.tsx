@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import ogImage from "@/assets/og-image.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/lib/cart";
 import { Header } from "@/components/site/Header";
@@ -92,12 +93,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "EAU TURQUOISE",
-          url: "https://oturquoise.lovable.app",
+          url: "https://eauturquoise.lovable.app",
+          logo: ogImage.url,
           description:
             "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
           contactPoint: {
             "@type": "ContactPoint",
-            email: "contact@oturquoise.com",
+            email: "contact@eauturquoise.com",
             contactType: "customer support",
             areaServed: "FR",
             availableLanguage: ["French"],
@@ -110,11 +112,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "EAU TURQUOISE",
-          url: "https://oturquoise.lovable.app",
+          url: "https://eauturquoise.lovable.app",
           inLanguage: "fr-FR",
           potentialAction: {
             "@type": "SearchAction",
-            target: "https://oturquoise.lovable.app/boutique?q={search_term_string}",
+            target: "https://eauturquoise.lovable.app/boutique?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         }),

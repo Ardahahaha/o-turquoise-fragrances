@@ -9,10 +9,31 @@ export const Route = createFileRoute("/boutique")({
       { name: "description", content: "Explorez notre sélection rigoureuse de parfums iconiques : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie." },
       { property: "og:title", content: "Boutique — EAU TURQUOISE" },
       { property: "og:description", content: "Sélection rigoureuse de parfums iconiques 100% authentiques." },
-      { property: "og:url", content: "https://oturquoise.lovable.app/boutique" },
+      { property: "og:url", content: "https://eauturquoise.lovable.app/boutique" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://oturquoise.lovable.app/boutique" }],
+    links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/boutique" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Boutique parfums de luxe — EAU TURQUOISE",
+          url: "https://eauturquoise.lovable.app/boutique",
+          description: "Sélection rigoureuse de parfums iconiques 100% authentiques.",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: PRODUCTS.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://eauturquoise.lovable.app/produit/${p.id}`,
+              name: p.name,
+            })),
+          },
+        }),
+      },
+    ],
   }),
   component: Boutique,
 });
