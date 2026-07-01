@@ -13,6 +13,33 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "https://eauturquoise.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact — EAU TURQUOISE",
+          url: "https://eauturquoise.lovable.app/contact",
+          description: "Contactez EAU TURQUOISE pour un conseil parfumerie ou une question sur votre commande.",
+          mainEntity: {
+            "@type": "Organization",
+            name: "EAU TURQUOISE",
+            email: "contact@eauturquoise.com",
+            telephone: "+33 1 23 45 67 89",
+            address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "contact@eauturquoise.com",
+              telephone: "+33 1 23 45 67 89",
+              contactType: "customer support",
+              areaServed: "FR",
+              availableLanguage: ["French"],
+            },
+          },
+        }),
+      },
+    ],
   }),
   component: Contact,
 });
