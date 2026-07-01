@@ -79,6 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "uKnL5hKLieW0mgPdZAG-Gp1k2fm-XwCVI9NLU3f0uIw" },
       { title: "EAU TURQUOISE — Parfums d'exception" },
       { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe. Découvrez Baccarat Rouge 540 — Maison Francis Kurkdjian." },
       { property: "og:type", content: "website" },
