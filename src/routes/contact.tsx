@@ -31,7 +31,7 @@ function Contact() {
 
       <div className="mt-8 grid gap-6 md:grid-cols-[1fr_1.4fr] md:gap-10">
         <div className="space-y-3">
-          <Info icon={<Mail className="h-3.5 w-3.5" />} title="Email">contact@oturquoise.com</Info>
+          <Info icon={<Mail className="h-3.5 w-3.5" />} title="Email">contact@eauturquoise.com</Info>
           <Info icon={<Phone className="h-3.5 w-3.5" />} title="Téléphone">+33 1 23 45 67 89</Info>
           <Info icon={<MapPin className="h-3.5 w-3.5" />} title="Adresse">Paris, France</Info>
         </div>

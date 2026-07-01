@@ -7,7 +7,7 @@ export function SplashScreen() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const seen = sessionStorage.getItem("oturquoise-splash-seen");
+    const seen = sessionStorage.getItem("eauturquoise-splash-seen");
     if (seen) return;
 
     setVisible(true);
@@ -26,7 +26,7 @@ export function SplashScreen() {
     const exitTimer = setTimeout(() => setExiting(true), 2600);
     const hideTimer = setTimeout(() => {
       setVisible(false);
-      sessionStorage.setItem("oturquoise-splash-seen", "1");
+      sessionStorage.setItem("eauturquoise-splash-seen", "1");
     }, 3400);
 
     return () => {

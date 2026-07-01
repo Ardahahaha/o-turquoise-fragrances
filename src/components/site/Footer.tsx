@@ -32,7 +32,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-foreground">Contact</h4>
             <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">
-              <li><a href="mailto:contact@oturquoise.com" className="hover:text-foreground">contact@oturquoise.com</a></li>
+              <li><a href="mailto:contact@eauturquoise.com" className="hover:text-foreground">contact@eauturquoise.com</a></li>
             </ul>
           </div>
         </div>

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/produit/$id")({
   head: ({ params, loaderData }) => {
     if (!loaderData) return { meta: [] };
     const { product } = loaderData;
-    const url = `https://oturquoise.lovable.app/produit/${params.id}`;
+    const url = `https://eauturquoise.lovable.app/produit/${params.id}`;
     const title = `${product.name} — ${product.brand} | EAU TURQUOISE`;
     const description = `${product.name} (${product.size}) par ${product.brand}. ${product.description}`.slice(0, 160);
     return {

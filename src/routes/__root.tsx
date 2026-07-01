@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
           contactPoint: {
             "@type": "ContactPoint",
-            email: "contact@oturquoise.com",
+            email: "contact@eauturquoise.com",
             contactType: "customer support",
             areaServed: "FR",
             availableLanguage: ["French"],
