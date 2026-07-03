@@ -4,6 +4,7 @@ import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
 import { SplineScene } from "@/components/site/SplineScene";
+import logoAsset from "@/assets/eau-turquoise-logo.png.asset.json";
 import { OttomanRosette } from "@/components/site/OttomanRosette";
 import { Marquee } from "@/components/site/Marquee";
 import { Parallax } from "@/components/site/Parallax";
