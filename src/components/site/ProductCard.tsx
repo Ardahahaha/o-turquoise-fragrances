@@ -23,7 +23,9 @@ export function ProductCard({ product }: { product: Product }) {
             width={600}
             height={600}
             className={`aspect-square w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
-              product.id === "hacivat" ? "p-10 sm:p-16" : "p-6 sm:p-10"
+              product.id === "hacivat" ? "p-10 sm:p-16" :
+              product.id === "vert-malachite" || product.id === "bleu-turquoise" ? "p-12 sm:p-20" :
+              "p-6 sm:p-10"
             }`}
             style={{ transform: "translateZ(40px)" }}
           />
