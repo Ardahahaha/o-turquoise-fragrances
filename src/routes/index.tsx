@@ -102,7 +102,7 @@ function Home() {
             <h1 className="mx-auto mt-3 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               La haute parfumerie.
               <br />
-              <span className="text-turquoise/60">Choisie avec soin.</span>
+              <span className="text-turquoise/30">Choisie avec soin.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
