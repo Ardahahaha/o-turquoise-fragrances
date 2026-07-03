@@ -8,6 +8,9 @@ import hacivatAlt2 from "@/assets/hacivat-alt-2.png.asset.json";
 import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
 import grandSoirAlt1 from "@/assets/grand-soir-alt-1.png.asset.json";
 import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
+import vertMalachiteAsset from "@/assets/vert-malachite.png.asset.json";
+import vertMalachiteAlt1 from "@/assets/vert-malachite-alt-1.png.asset.json";
+import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
@@ -152,6 +155,24 @@ export const PRODUCTS: Product[] = [
       tete: ["Lavande", "Bergamote"],
       coeur: ["Amyris", "Benjoin du Laos"],
       fond: ["Ambre", "Tonka", "Vanille"],
+    },
+  },
+  {
+    id: "vert-malachite",
+    name: "Vert Malachite",
+    brand: "Armani / Privé",
+    price: 200,
+    sizes: ["100 ml"],
+    size: "100 ml",
+    image: vertMalachiteAsset.url,
+    images: [vertMalachiteAsset.url, vertMalachiteAlt1.url, vertMalachiteAlt2.url],
+    tagline: "Eau de Parfum",
+    description:
+      "Une pierre précieuse olfactive signée Armani / Privé. Vert Malachite dévoile un accord vibrant de galbanum et de figuier, sublimé par une profondeur boisée et minérale, à la fois vive et hypnotique comme la pierre qui l'inspire.",
+    notes: {
+      tete: ["Galbanum", "Figuier", "Bergamote"],
+      coeur: ["Iris", "Violette", "Feuilles vertes"],
+      fond: ["Cèdre", "Vétiver", "Mousse"],
     },
   },
 ];
