@@ -22,7 +22,9 @@ export function ProductCard({ product }: { product: Product }) {
             decoding="async"
             width={600}
             height={600}
-            className="aspect-square w-full object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04] sm:p-10"
+            className={`aspect-square w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
+              product.id === "hacivat" ? "p-10 sm:p-16" : "p-6 sm:p-10"
+            }`}
             style={{ transform: "translateZ(40px)" }}
           />
         </div>
