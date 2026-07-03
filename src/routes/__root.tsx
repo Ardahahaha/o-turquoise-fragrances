@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "https://eauturquoise.lovable.app",
           logo: ogImage.url,
           description:
-            "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Authenticité garantie, livraison offerte en France.",
+            "EAU TURQUOISE — boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Nishane Hacivat, Grand Soir. Authenticité garantie, livraison offerte en France.",
           contactPoint: {
             "@type": "ContactPoint",
             email: "contact@eauturquoise.com",

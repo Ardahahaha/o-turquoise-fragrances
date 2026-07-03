@@ -1,6 +1,6 @@
 # EAU TURQUOISE
 
-> Boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir.
+> Boutique indépendante en ligne de parfums de luxe : Baccarat Rouge 540, Nishane Hacivat, Grand Soir.
 
 EAU TURQUOISE sélectionne et expédie des parfums iconiques 100% authentiques, avec livraison offerte en France métropolitaine. Maison indépendante, non affiliée officiellement à Maison Francis Kurkdjian.
 
@@ -9,7 +9,7 @@ EAU TURQUOISE sélectionne et expédie des parfums iconiques 100% authentiques, 
 - [Accueil](/): Présentation de la maison et sélection mise en avant.
 - [Boutique](/boutique): Catalogue complet des parfums disponibles.
 - [Baccarat Rouge 540](/produit/baccarat-rouge-540): Extrait de parfum Maison Francis Kurkdjian, 70 ml.
-- [Bleu de Chanel](/produit/bleu-de-chanel): Eau de Parfum Chanel, 100 ml.
+- [Nishane Hacivat](/produit/hacivat): Extrait de Parfum Nishane, 50 ml.
 - [Grand Soir](/produit/grand-soir): Eau de Parfum Maison Francis Kurkdjian, 70 ml.
 - [À propos](/a-propos): L'histoire et les valeurs de la maison.
 - [Livraison](/livraison): Modalités d'expédition et garanties.
