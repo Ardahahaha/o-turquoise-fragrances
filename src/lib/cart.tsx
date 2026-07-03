@@ -14,6 +14,10 @@ import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
 import bleuTurquoiseAsset from "@/assets/bleu-turquoise.png.asset.json";
 import bleuTurquoiseAlt1 from "@/assets/bleu-turquoise-alt-1.png.asset.json";
 import bleuTurquoiseAlt2 from "@/assets/bleu-turquoise-alt-2.png.asset.json";
+import roseBleueAsset from "@/assets/rose-bleue.png.asset.json";
+import roseBleueAlt1 from "@/assets/rose-bleue-alt-1.png.asset.json";
+import roseBleueAlt2 from "@/assets/rose-bleue-alt-2.png.asset.json";
+import roseBleueAlt3 from "@/assets/rose-bleue-alt-3.png.asset.json";
 
 export type CartItem = {
   id: string;
