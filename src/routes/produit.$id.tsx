@@ -128,7 +128,9 @@ function ProductPage() {
               height={760}
               fetchPriority="high"
               decoding="async"
-              className="mx-auto w-full max-w-md p-6 sm:p-12 animate-in fade-in duration-300"
+              className={`mx-auto w-full p-6 sm:p-12 animate-in fade-in duration-300 ${
+                product.id === "hacivat" ? "max-w-sm" : "max-w-md"
+              }`}
             />
           </div>
           {gallery.length > 1 && (
