@@ -11,6 +11,9 @@ import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
 import vertMalachiteAsset from "@/assets/vert-malachite.png.asset.json";
 import vertMalachiteAlt1 from "@/assets/vert-malachite-alt-1.png.asset.json";
 import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
+import bleuTurquoiseAsset from "@/assets/bleu-turquoise.png.asset.json";
+import bleuTurquoiseAlt1 from "@/assets/bleu-turquoise-alt-1.png.asset.json";
+import bleuTurquoiseAlt2 from "@/assets/bleu-turquoise-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
@@ -173,6 +176,24 @@ export const PRODUCTS: Product[] = [
       tete: ["Galbanum", "Figuier", "Bergamote"],
       coeur: ["Iris", "Violette", "Feuilles vertes"],
       fond: ["Cèdre", "Vétiver", "Mousse"],
+    },
+  },
+  {
+    id: "bleu-turquoise",
+    name: "Bleu Turquoise",
+    brand: "Armani / Privé",
+    price: 200,
+    sizes: ["100 ml"],
+    size: "100 ml",
+    image: bleuTurquoiseAsset.url,
+    images: [bleuTurquoiseAsset.url, bleuTurquoiseAlt1.url, bleuTurquoiseAlt2.url],
+    tagline: "Eau de Parfum",
+    description:
+      "Une évasion méditerranéenne signée Armani / Privé. Bleu Turquoise capture la lumière iodée de la mer avec un accord frais de sel, de bergamote et de vanille, pour un sillage solaire, minéral et enveloppant.",
+    notes: {
+      tete: ["Bergamote", "Sel marin", "Néroli"],
+      coeur: ["Fleur d'oranger", "Jasmin"],
+      fond: ["Vanille", "Ambre", "Musc blanc"],
     },
   },
 ];
