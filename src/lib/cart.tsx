@@ -157,6 +157,24 @@ export const PRODUCTS: Product[] = [
       fond: ["Ambre", "Tonka", "Vanille"],
     },
   },
+  {
+    id: "vert-malachite",
+    name: "Vert Malachite",
+    brand: "Armani / Privé",
+    price: 200,
+    sizes: ["100 ml"],
+    size: "100 ml",
+    image: vertMalachiteAsset.url,
+    images: [vertMalachiteAsset.url, vertMalachiteAlt1.url, vertMalachiteAlt2.url],
+    tagline: "Eau de Parfum",
+    description:
+      "Une pierre précieuse olfactive signée Armani / Privé. Vert Malachite dévoile un accord vibrant de galbanum et de figuier, sublimé par une profondeur boisée et minérale, à la fois vive et hypnotique comme la pierre qui l'inspire.",
+    notes: {
+      tete: ["Galbanum", "Figuier", "Bergamote"],
+      coeur: ["Iris", "Violette", "Feuilles vertes"],
+      fond: ["Cèdre", "Vétiver", "Mousse"],
+    },
+  },
 ];
 
 export function getProduct(id: string) {
