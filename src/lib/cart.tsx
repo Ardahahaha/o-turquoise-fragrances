@@ -11,6 +11,9 @@ import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
 import vertMalachiteAsset from "@/assets/vert-malachite.png.asset.json";
 import vertMalachiteAlt1 from "@/assets/vert-malachite-alt-1.png.asset.json";
 import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
+import bleuTurquoiseAsset from "@/assets/bleu-turquoise.png.asset.json";
+import bleuTurquoiseAlt1 from "@/assets/bleu-turquoise-alt-1.png.asset.json";
+import bleuTurquoiseAlt2 from "@/assets/bleu-turquoise-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
