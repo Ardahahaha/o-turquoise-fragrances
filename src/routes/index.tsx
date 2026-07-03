@@ -84,7 +84,7 @@ function Home() {
           <Reveal>
             <div className="relative mx-auto mb-6 w-full max-w-md">
               <div className="mx-auto flex h-72 w-full items-center justify-center overflow-hidden rounded-[2rem] bg-white/60 ring-1 ring-black/5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_40px_-20px_rgba(15,23,42,0.35),0_40px_80px_-40px_rgba(15,23,42,0.25)]">
-                <img src={logoAsset.url} alt="Eau Turquoise" className="max-h-[85%] w-auto object-contain" />
+                <img src={logoAsset.url} alt="Eau Turquoise" className="max-h-[70%] w-auto object-contain" />
               </div>
             </div>
           </Reveal>
