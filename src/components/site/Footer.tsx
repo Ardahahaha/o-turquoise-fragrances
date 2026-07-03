@@ -40,7 +40,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border/70 pt-5">
           <p className="text-[11px] leading-relaxed text-muted-foreground">
-            EAU TURQUOISE est une boutique indépendante et n'est pas affiliée officiellement à Maison Francis Kurkdjian ni à Chanel. Toutes les marques citées appartiennent à leurs propriétaires respectifs.
+            EAU TURQUOISE est une boutique indépendante et n'est pas affiliée officiellement à Maison Francis Kurkdjian . Toutes les marques citées appartiennent à leurs propriétaires respectifs.
           </p>
           <p className="mt-2 text-[11px] text-muted-foreground">
             © {new Date().getFullYear()} EAU TURQUOISE. Tous droits réservés.

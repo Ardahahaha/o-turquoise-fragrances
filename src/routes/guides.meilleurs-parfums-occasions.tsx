@@ -8,8 +8,8 @@ export const Route = createFileRoute("/guides/meilleurs-parfums-occasions")({
   head: () => ({
     meta: [
       { title: "Les meilleurs parfums de luxe pour les grandes occasions — EAU TURQUOISE" },
-      { name: "description", content: "Découvrez notre guide des parfums de luxe idéaux pour les grandes occasions : Baccarat Rouge 540, Grand Soir, Bleu de Chanel. Conseils et sélection EAU TURQUOISE." },
-      { name: "keywords", content: "parfum luxe, parfum occasion, Baccarat Rouge 540, Grand Soir, Bleu de Chanel, parfum soirée, parfum cadeau" },
+      { name: "description", content: "Découvrez notre guide des parfums de luxe idéaux pour les grandes occasions : Baccarat Rouge 540, Grand Soir, Nishane Hacivat. Conseils et sélection EAU TURQUOISE." },
+      { name: "keywords", content: "parfum luxe, parfum occasion, Baccarat Rouge 540, Grand Soir, Nishane Hacivat, parfum soirée, parfum cadeau" },
       { property: "og:title", content: "Les meilleurs parfums de luxe pour les grandes occasions — EAU TURQUOISE" },
       { property: "og:description", content: "Guide parfum : quels flacons de luxe choisir pour un mariage, un gala ou un dîner romantique ?" },
       { property: "og:url", content: "https://eauturquoise.lovable.app/guides/meilleurs-parfums-occasions" },
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/guides/meilleurs-parfums-occasions")({
 function GuidePage() {
   const baccarat = PRODUCTS.find((p) => p.id === "baccarat-rouge-540");
   const grandSoir = PRODUCTS.find((p) => p.id === "grand-soir");
-  const bleuChanel = PRODUCTS.find((p) => p.id === "bleu-de-chanel");
+  const bleuChanel = PRODUCTS.find((p) => p.id === "hacivat");
 
   return (
     <main className="relative mx-auto max-w-3xl px-4 py-12 sm:py-20">

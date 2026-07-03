@@ -12,7 +12,7 @@ import { Parallax } from "@/components/site/Parallax";
 const FAQ = [
   {
     q: "Quels parfums propose EAU TURQUOISE ?",
-    a: "EAU TURQUOISE propose une sélection rare de parfums de luxe : Baccarat Rouge 540 de Maison Francis Kurkdjian, Bleu de Chanel et Grand Soir. Une boutique indépendante dédiée à la haute parfumerie.",
+    a: "EAU TURQUOISE propose une sélection rare de parfums de luxe : Baccarat Rouge 540 de Maison Francis Kurkdjian, Nishane Hacivat et Grand Soir. Une boutique indépendante dédiée à la haute parfumerie.",
   },
   {
     q: "Le parfum Baccarat Rouge 540 est-il disponible ?",
@@ -38,10 +38,10 @@ export const Route = createFileRoute("/")({
     return {
       meta: [
         { title: "EAU TURQUOISE — Boutique de parfum premium en ligne" },
-        { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe : Baccarat Rouge 540, Bleu de Chanel, Grand Soir. Livraison offerte en France." },
-        { name: "keywords", content: "EAU TURQUOISE, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Bleu de Chanel, Grand Soir" },
+        { name: "description", content: "EAU TURQUOISE, boutique indépendante de parfums de luxe : Baccarat Rouge 540, Nishane Hacivat, Grand Soir. Livraison offerte en France." },
+        { name: "keywords", content: "EAU TURQUOISE, parfum, boutique de parfum, parfum de luxe, parfum premium, parfum en ligne, Baccarat Rouge 540, Maison Francis Kurkdjian, Nishane Hacivat, Grand Soir" },
         { property: "og:title", content: "EAU TURQUOISE — Boutique de parfum premium en ligne" },
-        { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Bleu de Chanel, Grand Soir — livraison offerte en France." },
+        { property: "og:description", content: "Sélection rare de parfums de luxe authentiques. Baccarat Rouge 540, Nishane Hacivat, Grand Soir — livraison offerte en France." },
         { property: "og:url", content: "https://eauturquoise.lovable.app/" },
         { property: "og:type", content: "website" },
         { property: "og:image" as const, content: ogImage.url },
@@ -233,7 +233,7 @@ function Home() {
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
               EAU TURQUOISE est une boutique indépendante dédiée à la haute parfumerie. Nous sélectionnons
               quelques fragrances iconiques — comme <strong className="text-foreground">Baccarat Rouge 540</strong> de
-              Maison Francis Kurkdjian, <strong className="text-foreground">Bleu de Chanel</strong> ou{" "}
+              Maison Francis Kurkdjian, <strong className="text-foreground">Nishane Hacivat</strong> ou{" "}
               <strong className="text-foreground">Grand Soir</strong> — pour offrir une expérience d'achat
               raffinée, claire et sans compromis.
             </p>

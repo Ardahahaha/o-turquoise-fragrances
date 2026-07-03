@@ -2,8 +2,9 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 import baccaratAsset from "@/assets/baccarat-rouge-540.png.asset.json";
 import baccaratAlt1 from "@/assets/baccarat-alt-1.png.asset.json";
 import baccaratAlt2 from "@/assets/baccarat-alt-2.png.asset.json";
-import bleuAsset from "@/assets/bleu-de-chanel.png.asset.json";
-import bleuAlt1 from "@/assets/bleu-de-chanel-alt-1.png.asset.json";
+import hacivatAsset from "@/assets/hacivat.png.asset.json";
+import hacivatAlt1 from "@/assets/hacivat-alt-1.png.asset.json";
+import hacivatAlt2 from "@/assets/hacivat-alt-2.png.asset.json";
 import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
 import grandSoirAlt1 from "@/assets/grand-soir-alt-1.png.asset.json";
 import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
@@ -118,21 +119,21 @@ export const PRODUCTS: Product[] = [
     },
   },
   {
-    id: "bleu-de-chanel",
-    name: "Bleu de Chanel",
-    brand: "Chanel",
+    id: "hacivat",
+    name: "Hacivat",
+    brand: "Nishane",
     price: 80,
-    sizes: ["100 ml"],
-    size: "100 ml",
-    image: bleuAsset.url,
-    images: [bleuAsset.url, bleuAlt1.url],
-    tagline: "Eau de Parfum",
+    sizes: ["50 ml"],
+    size: "50 ml",
+    image: hacivatAsset.url,
+    images: [hacivatAsset.url, hacivatAlt1.url, hacivatAlt2.url],
+    tagline: "Extrait de Parfum",
     description:
-      "Une fragrance boisée et aromatique d'une grande liberté. Une signature masculine et intemporelle, à la fois fraîche, minérale et profondément sensuelle.",
+      "Une fragrance solaire et boisée, signature de la maison istanbouliote Nishane. Un accord lumineux d'ananas et d'agrumes qui se love dans un cœur de bois précieux et de mousse, pour un sillage à la fois vibrant et sophistiqué.",
     notes: {
-      tete: ["Pamplemousse", "Citron", "Menthe"],
-      coeur: ["Encens", "Gingembre", "Iso E Super"],
-      fond: ["Santal", "Cèdre", "Labdanum"],
+      tete: ["Ananas", "Bergamote", "Pamplemousse"],
+      coeur: ["Oakmoss", "Patchouli"],
+      fond: ["Cèdre", "Bouleau", "Santal"],
     },
   },
   {
