@@ -178,6 +178,24 @@ export const PRODUCTS: Product[] = [
       fond: ["Cèdre", "Vétiver", "Mousse"],
     },
   },
+  {
+    id: "bleu-turquoise",
+    name: "Bleu Turquoise",
+    brand: "Armani / Privé",
+    price: 200,
+    sizes: ["100 ml"],
+    size: "100 ml",
+    image: bleuTurquoiseAsset.url,
+    images: [bleuTurquoiseAsset.url, bleuTurquoiseAlt1.url, bleuTurquoiseAlt2.url],
+    tagline: "Eau de Parfum",
+    description:
+      "Une évasion méditerranéenne signée Armani / Privé. Bleu Turquoise capture la lumière iodée de la mer avec un accord frais de sel, de bergamote et de vanille, pour un sillage solaire, minéral et enveloppant.",
+    notes: {
+      tete: ["Bergamote", "Sel marin", "Néroli"],
+      coeur: ["Fleur d'oranger", "Jasmin"],
+      fond: ["Vanille", "Ambre", "Musc blanc"],
+    },
+  },
 ];
 
 export function getProduct(id: string) {
