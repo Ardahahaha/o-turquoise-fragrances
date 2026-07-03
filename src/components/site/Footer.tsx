@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoAsset from "@/assets/eau-turquoise-logo.png.asset.json";
 
 export function Footer() {
   return (
@@ -6,8 +7,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <p className="text-sm font-semibold tracking-tight text-foreground">EAU TURQUOISE</p>
-            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            <img src={logoAsset.url} alt="Eau Turquoise" className="h-10 w-auto" />
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
               Boutique indépendante de parfums d'exception.
             </p>
           </div>
