@@ -14,6 +14,10 @@ import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
 import bleuTurquoiseAsset from "@/assets/bleu-turquoise.png.asset.json";
 import bleuTurquoiseAlt1 from "@/assets/bleu-turquoise-alt-1.png.asset.json";
 import bleuTurquoiseAlt2 from "@/assets/bleu-turquoise-alt-2.png.asset.json";
+import roseBleueAsset from "@/assets/rose-bleue.png.asset.json";
+import roseBleueAlt1 from "@/assets/rose-bleue-alt-1.png.asset.json";
+import roseBleueAlt2 from "@/assets/rose-bleue-alt-2.png.asset.json";
+import roseBleueAlt3 from "@/assets/rose-bleue-alt-3.png.asset.json";
 
 export type CartItem = {
   id: string;
@@ -194,6 +198,24 @@ export const PRODUCTS: Product[] = [
       tete: ["Bergamote", "Sel marin", "Néroli"],
       coeur: ["Fleur d'oranger", "Jasmin"],
       fond: ["Vanille", "Ambre", "Musc blanc"],
+    },
+  },
+  {
+    id: "la-rose-bleue",
+    name: "La Rose Bleue",
+    brand: "Maison Massimo",
+    price: 110,
+    sizes: ["75 ml"],
+    size: "75 ml",
+    image: roseBleueAsset.url,
+    images: [roseBleueAsset.url, roseBleueAlt1.url, roseBleueAlt2.url, roseBleueAlt3.url],
+    tagline: "Niche Édition — Private",
+    description:
+      "Une composition joyeuse et lumineuse signée Maison Massimo Paris. Un panier d'agrumes siciliens et de bergamote de Calabre s'entrelace à un musc duveteux et un ambre brut, ouvrant les portes d'une vanille sensuelle et rêveuse. La Rose Bleue, c'est la joie de vivre.",
+    notes: {
+      tete: ["Bergamote de Calabre", "Agrumes siciliens"],
+      coeur: ["Rose", "Musc duveteux"],
+      fond: ["Ambre brut", "Vanille"],
     },
   },
 ];
