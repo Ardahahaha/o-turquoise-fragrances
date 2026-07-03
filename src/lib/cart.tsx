@@ -8,6 +8,9 @@ import hacivatAlt2 from "@/assets/hacivat-alt-2.png.asset.json";
 import grandSoirAsset from "@/assets/grand-soir.png.asset.json";
 import grandSoirAlt1 from "@/assets/grand-soir-alt-1.png.asset.json";
 import grandSoirAlt2 from "@/assets/grand-soir-alt-2.png.asset.json";
+import vertMalachiteAsset from "@/assets/vert-malachite.png.asset.json";
+import vertMalachiteAlt1 from "@/assets/vert-malachite-alt-1.png.asset.json";
+import vertMalachiteAlt2 from "@/assets/vert-malachite-alt-2.png.asset.json";
 
 export type CartItem = {
   id: string;
