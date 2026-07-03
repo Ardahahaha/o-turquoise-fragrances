@@ -200,6 +200,24 @@ export const PRODUCTS: Product[] = [
       fond: ["Vanille", "Ambre", "Musc blanc"],
     },
   },
+  {
+    id: "la-rose-bleue",
+    name: "La Rose Bleue",
+    brand: "Maison Massimo",
+    price: 110,
+    sizes: ["75 ml"],
+    size: "75 ml",
+    image: roseBleueAsset.url,
+    images: [roseBleueAsset.url, roseBleueAlt1.url, roseBleueAlt2.url, roseBleueAlt3.url],
+    tagline: "Niche Édition — Private",
+    description:
+      "Une composition joyeuse et lumineuse signée Maison Massimo Paris. Un panier d'agrumes siciliens et de bergamote de Calabre s'entrelace à un musc duveteux et un ambre brut, ouvrant les portes d'une vanille sensuelle et rêveuse. La Rose Bleue, c'est la joie de vivre.",
+    notes: {
+      tete: ["Bergamote de Calabre", "Agrumes siciliens"],
+      coeur: ["Rose", "Musc duveteux"],
+      fond: ["Ambre brut", "Vanille"],
+    },
+  },
 ];
 
 export function getProduct(id: string) {
