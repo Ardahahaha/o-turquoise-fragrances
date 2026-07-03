@@ -4,6 +4,7 @@ import { PRODUCTS } from "@/lib/cart";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
 import { SplineScene } from "@/components/site/SplineScene";
+import logoAsset from "@/assets/eau-turquoise-logo.png.asset.json";
 import { OttomanRosette } from "@/components/site/OttomanRosette";
 import { Marquee } from "@/components/site/Marquee";
 import { Parallax } from "@/components/site/Parallax";
@@ -82,16 +83,8 @@ function Home() {
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
             <div className="relative mx-auto mb-6 w-full max-w-md">
-              <SplineScene
-                scene="https://prod.spline.design/YRhHJGoKUEx8ehQd/scene.splinecode"
-                className="mx-auto h-72 w-full overflow-hidden rounded-[2rem] ring-1 ring-black/5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_40px_-20px_rgba(15,23,42,0.35),0_40px_80px_-40px_rgba(15,23,42,0.25)]"
-                zoom={0.3}
-              />
-              {/* Texte EAU TURQUOISE par-dessus l'animation */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center sm:bottom-7">
-                <span className="text-2xl font-semibold tracking-[-0.04em] text-foreground/60 sm:text-3xl">
-                  EAU TURQUOISE
-                </span>
+              <div className="mx-auto flex h-72 w-full items-center justify-center overflow-hidden rounded-[2rem] bg-white/60 ring-1 ring-black/5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_40px_-20px_rgba(15,23,42,0.35),0_40px_80px_-40px_rgba(15,23,42,0.25)]">
+                <img src={logoAsset.url} alt="Eau Turquoise" className="max-h-[85%] w-auto object-contain" />
               </div>
             </div>
           </Reveal>
