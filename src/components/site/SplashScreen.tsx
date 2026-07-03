@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logoAsset from "@/assets/eau-turquoise-logo.png.asset.json";
 
 export function SplashScreen() {
   const [visible, setVisible] = useState(false);
@@ -46,18 +47,13 @@ export function SplashScreen() {
       }`}
     >
       <div className="flex flex-col items-center">
-        <div className="relative mb-7">
-          <div
-            className="animate-splash-drop h-11 w-8 bg-turquoise shadow-[0_0_40px_-4px_rgba(0,191,166,0.40)]"
-            style={{ borderRadius: "50% 50% 50% 50% / 65% 65% 35% 35%" }}
-          />
-        </div>
+        <img
+          src={logoAsset.url}
+          alt="Eau Turquoise"
+          className="animate-splash-text h-28 w-auto sm:h-32"
+        />
 
-        <h1 className="animate-splash-text text-[1.85rem] font-light tracking-[-0.05em] text-foreground">
-          EAU TURQUOISE
-        </h1>
-
-        <p className="animate-splash-text mt-1.5 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="animate-splash-text mt-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
           Parfums d'exception
         </p>
 
