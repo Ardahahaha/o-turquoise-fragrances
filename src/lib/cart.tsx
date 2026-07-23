@@ -1,4 +1,6 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import type { Json } from "@/integrations/supabase/types";
 import baccaratAsset from "@/assets/baccarat-rouge-540.png.asset.json";
 import baccaratAlt1 from "@/assets/baccarat-alt-1.png.asset.json";
 import baccaratAlt2 from "@/assets/baccarat-alt-2.png.asset.json";
@@ -42,21 +44,101 @@ type CartCtx = {
 const Ctx = createContext<CartCtx | null>(null);
 const KEY = "eauturquoise_cart_v2";
 
+function accountCacheKey(userId: string) {
+  return `${KEY}:account:${userId}`;
+}
+
+function readLocalCart(key = KEY): CartItem[] {
+  try {
+    const raw = typeof window !== "undefined" ? window.localStorage.getItem(key) : null;
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function mergeCarts(local: CartItem[], remote: CartItem[]) {
+  const merged = new Map<string, CartItem>();
+  for (const item of [...remote, ...local]) {
+    const key = `${item.id}::${item.size}`;
+    const previous = merged.get(key);
+    merged.set(key, previous ? { ...item, quantity: Math.max(previous.quantity, item.quantity) } : item);
+  }
+  return [...merged.values()];
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [ready, setReady] = useState(false);
+  const mounted = useRef(true);
 
   useEffect(() => {
-    try {
-      const raw = typeof window !== "undefined" ? window.localStorage.getItem(KEY) : null;
-      if (raw) setItems(JSON.parse(raw));
-    } catch {}
+    mounted.current = true;
+    const local = readLocalCart();
+    setItems(local);
+    setReady(true);
+
+    async function attachAccount(id: string) {
+      setReady(false);
+      const { data, error } = await supabase
+        .from("user_carts")
+        .select("items")
+        .eq("user_id", id)
+        .maybeSingle();
+      if (!mounted.current) return;
+      const cached = readLocalCart(accountCacheKey(id));
+      const remote = Array.isArray(data?.items) ? (data.items as unknown as CartItem[]) : cached;
+      const merged = mergeCarts(readLocalCart(), remote);
+      setUserId(id);
+      setItems(merged);
+      setReady(true);
+      window.localStorage.removeItem(KEY);
+      window.localStorage.setItem(accountCacheKey(id), JSON.stringify(merged));
+      if (error) return;
+      await supabase.from("user_carts").upsert({
+        user_id: id,
+        items: merged as unknown as Json,
+        updated_at: new Date().toISOString(),
+      });
+    }
+
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session?.user.id) attachAccount(data.session.user.id);
+    });
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user.id) attachAccount(session.user.id);
+      else {
+        setUserId(null);
+        setItems(readLocalCart());
+        setReady(true);
+      }
+    });
+
+    return () => {
+      mounted.current = false;
+      authListener.subscription.unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     try {
-      if (typeof window !== "undefined") window.localStorage.setItem(KEY, JSON.stringify(items));
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(userId ? accountCacheKey(userId) : KEY, JSON.stringify(items));
+      }
     } catch {}
-  }, [items]);
+
+    if (!userId) return;
+    const timer = window.setTimeout(() => {
+      supabase.from("user_carts").upsert({
+        user_id: userId,
+        items: items as unknown as Json,
+        updated_at: new Date().toISOString(),
+      });
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [items, ready, userId]);
 
   const add: CartCtx["add"] = (item, qty = 1) => {
     setItems((prev) => {

@@ -7,7 +7,7 @@ import { SplineScene } from "@/components/site/SplineScene";
 import logoAsset from "@/assets/eau-turquoise-logo.png.asset.json";
 import { OttomanRosette } from "@/components/site/OttomanRosette";
 import { Marquee } from "@/components/site/Marquee";
-import { Parallax } from "@/components/site/Parallax";
+import { CylinderCarousel } from "@/components/ui/cylinder-carousel";
 
 const FAQ = [
   {
@@ -75,6 +75,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const hero = PRODUCTS[0];
+  const carouselImages = PRODUCTS.flatMap((product) =>
+    (product.images?.length ? product.images : [product.image]).map((src, index) => ({
+      src,
+      alt: `${product.name} — ${product.brand}${index ? `, vue ${index + 1}` : ""}`,
+    })),
+  ).filter((image, index, all) => all.findIndex((candidate) => candidate.src === image.src) === index);
 
   return (
     <div>
@@ -82,10 +88,8 @@ function Home() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-20">
           <Reveal>
-            <div className="relative mx-auto mb-6 w-full max-w-md">
-              <div className="mx-auto flex h-72 w-full items-center justify-center overflow-hidden rounded-[2rem] bg-white/60 ring-1 ring-black/5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_40px_-20px_rgba(15,23,42,0.35),0_40px_80px_-40px_rgba(15,23,42,0.25)]">
-                <img src={logoAsset.url} alt="Eau Turquoise" className="max-h-[70%] w-auto object-contain" />
-              </div>
+            <div className="card mx-auto mb-6">
+              <img src={logoAsset.url} alt="Eau Turquoise" className="max-h-[70%] max-w-[85%] object-contain" />
             </div>
           </Reveal>
           <Reveal>
@@ -98,11 +102,51 @@ function Home() {
             </p>
           </Reveal>
 
+          <Reveal delay={80}>
+            <div className="instagram-follow">
+              <p>Retrouvez-nous sur Instagram</p>
+              <div className="instagram-tooltip-container">
+                <div className="instagram-tooltip" role="tooltip">
+                  <div className="instagram-profile">
+                    <div className="instagram-user">
+                      <div className="instagram-avatar">ET</div>
+                      <div className="instagram-details">
+                        <div className="instagram-name">EAU TURQUOISE</div>
+                        <div className="instagram-username">@eauturquoise.p</div>
+                      </div>
+                    </div>
+                    <div className="instagram-about">Parfums d'exception</div>
+                  </div>
+                </div>
+                <a
+                  className="instagram-icon"
+                  href="https://www.instagram.com/eauturquoise.p/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Retrouvez EAU TURQUOISE sur Instagram"
+                >
+                  <span className="instagram-layer" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span className="instagram-gradient">
+                      <svg fill="white" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                      </svg>
+                    </span>
+                  </span>
+                  <span className="instagram-label">Instagram</span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
           <Reveal delay={120}>
             <h1 className="mx-auto mt-3 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
               La haute parfumerie.
               <br />
-              <span className="text-turquoise/30">Choisie avec soin.</span>
+              <span className="hero-morph">Choisie avec soin.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
@@ -136,21 +180,9 @@ function Home() {
           </Reveal>
 
           <Reveal delay={500}>
-            <Parallax amount={28} className="relative mx-auto mt-10 max-w-md sm:mt-14 sm:max-w-lg">
-              {/* glow halo */}
-              <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.18),transparent_60%)] blur-2xl" />
-              <div className="glass mx-auto rounded-3xl p-6 sm:p-10">
-                <img
-                  src={hero.image}
-                  alt={`Flacon ${hero.name} — ${hero.brand}, parfum de luxe disponible sur EAU TURQUOISE`}
-                  width={760}
-                  height={760}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="mx-auto w-full max-w-[260px] sm:max-w-[380px]"
-                />
-              </div>
-            </Parallax>
+            <div className="mx-auto mt-8 w-full max-w-5xl sm:mt-12">
+              <CylinderCarousel images={carouselImages} animationDuration={42} cardWidth={290} />
+            </div>
           </Reveal>
         </div>
       </section>

@@ -128,7 +128,7 @@ function ProductPage() {
               height={760}
               fetchPriority="high"
               decoding="async"
-              className={`mx-auto w-full p-6 sm:p-12 animate-in fade-in duration-300 ${
+              className={`mx-auto w-full rounded-2xl p-6 sm:p-12 animate-in fade-in duration-300 ${
                 product.id === "hacivat" ? "max-w-sm" : "max-w-md"
               }`}
             />
@@ -147,7 +147,7 @@ function ProductPage() {
                       : "ring-border hover:ring-foreground/30"
                   }`}
                 >
-                  <img src={src} alt="" loading="lazy" decoding="async" width={120} height={120} className="h-full w-full object-contain p-1.5" />
+                  <img src={src} alt="" loading="lazy" decoding="async" width={120} height={120} className="h-full w-full rounded-md object-contain p-1.5" />
                 </button>
               ))}
             </div>
